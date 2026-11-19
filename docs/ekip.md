@@ -24,6 +24,9 @@
 
 **Birlikte:** haftada bir 15 dk Konulara bakmak; tasarımı ve pilot öncesi son hali kafe sahibine göstermek (sunumu Muhammed yapar, demo hazırlığını Mustafa).
 
+## Ayrı odak, ortak uyum
+Her kişi kendi alanına odaklanır, diğerinin işini sadece onu bekliyorsa ya da etkiliyorsa görür. Kod nöbeti sadece kodu bağlar, saha işleri nöbet beklemez. `/sekreter` her oturumda kişiye tek bir "şimdi bunu yap" işi verir ve diğerini bekleten işleri öne alır. Acil olmayan soru ve haberler birikir, kişi kendi oturumunda hepsini topluca görür.
+
 ## Claude her hesapta farklı çalışır
 - **Mustafa'nın hesabında: çalışan.** Teknik işi yapar, kod yazar, ajanları çalıştırır, karar seçeneklerini kısaca sunar. Mustafa'ya kod öğretmez.
 - **Muhammed'in hesabında: asistan.** Odak gerçek hayattaki işlerdir: görüşme hazırlığı (`/gorusme`), kafe sahibine gönderilecek mesaj taslakları, yapılacaklar listesi, görüşmeden sonra duyulanları Konulara işlemek (`/aktar`), eğitim (`/ogren`). Teknik terim kullanmaz, kullanırsa açıklar. Kod işine sadece sıra Muhammed'deyken ve Mustafa'nın verdiği işle girilir.

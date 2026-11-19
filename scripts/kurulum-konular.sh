@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Repo ilk açıldığında bir kez, Mustafa'nın oturumunda çalışır: etiketleri ve ilk Konuları açar.
 set -e
-for l in "soru:d4c5f9" "karar:0e8a16" "hata:d73a4a" "iş:1d76db" "eğitim:fbca04"; do
+for l in "soru:d4c5f9" "karar:0e8a16" "hata:d73a4a" "iş:1d76db" "eğitim:fbca04" "engel:b60205"; do
   gh label create "${l%%:*}" --color "${l##*:}" --force >/dev/null
 done
 # İlk Konular docs/ilk-konular.md'den açılır (her "## " başlığı bir Konu).

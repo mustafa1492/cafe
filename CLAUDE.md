@@ -20,7 +20,7 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Ekip: `docs/
 
 ## 2. İletişim (tek kanal: GitHub Konuları)
 - Ekip arasındaki her soru, karar ve haber bir **GitHub Konusu (issue)** olarak yazılır. GitHub yeni konuyu ve her cevabı ilgili kişilere **otomatik e-postayla** gönderir. WhatsApp'ta konuşulan bir şey Konuya yazılmadıysa yok sayılır.
-- Konuların etiketleri: `soru`, `karar`, `hata`, `iş`, `eğitim`. Her konunun bir sorumlusu (assignee) olur.
+- Konuların etiketleri: `soru`, `karar`, `hata`, `iş`, `eğitim`, `engel` (diğerinin bugünkü işini durduruyor; acil). Acil olmayan haber ayrı Konu açılmadan ilgili Konuya yorum olarak eklenir, kimsenin odağı boşuna bölünmez. Her konunun bir sorumlusu (assignee) olur.
 - Oturum açılınca kanca (`.claude/settings.json`) nöbeti ve **o kişiye atanmış açık Konuları** gösterir. Hesap belli olunca Claude, işe başlamadan önce bunları sorar: önce kaç tane olduğunu söyler, sonra 3'erli gruplar halinde sorar. Kişi "sonra" derse işe geçilir.
 - Cevap Konuya yorum olarak yazılır. Konudan bir karar çıkarsa Mustafa'nın oturumu bunu `docs/kararlar.md`'ye bir satır olarak yazar. Commit mesajına konu numarası (`#12`) eklenir.
 - Komutlar: `gh issue list --assignee @me`, `gh issue create`, `gh issue comment`. Uzun bir konunun bütün yorumları değil, sadece son yorumu okunur.
@@ -37,8 +37,8 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Ekip: `docs/
 | `kafe-test` | değişen kısmın testini ve simülasyonu çalıştırır | haiku |
 | `kafe-inceleme` | değişikliği kurallara göre denetler; para, sipariş ve veritabanı işinden sonra zorunlu | sonnet |
 | `kafe-veritabani` | göç, RLS ve RPC yazar; canlıya dokunmaz | sonnet |
-| `kafe-sekreter` | Mustafa ile Muhammed'in ortak sekreteri: durum özeti, hatırlatma, gündem, mesaj taslağı, tutarlılık kontrolü; kod ve belge değiştirmez, karar vermez | sonnet |
-| `/sekreter [istek]` | sekreteri çağırır; boşsa durum özeti | |
+| `kafe-sekreter` | ortak sekreter ve uyum sağlayıcı: herkes kendi alanına odaklanır, birbirini bölmez; bekleyen/engelleyen işleri öne alır, iki alan arasında çevirir, uyumsuzluğu yakalar; kod ve belge değiştirmez, karar vermez | sonnet |
+| `/sekreter [istek]` | sekreteri çağırır; boşsa "şimdi ne yapmalıyım" odak raporu | |
 | `/devret`, `/devral` | sıra devri | |
 | `/kaydet` | sohbetteki kararları ve istekleri deftere ya da Konuya yazar | |
 | `/ogret <ajan> <ders>` | ajana kalıcı kural ekler | |
