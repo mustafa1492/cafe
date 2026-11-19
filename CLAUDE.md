@@ -37,6 +37,8 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Ekip: `docs/
 | `kafe-test` | değişen kısmın testini ve simülasyonu çalıştırır | haiku |
 | `kafe-inceleme` | değişikliği kurallara göre denetler; para, sipariş ve veritabanı işinden sonra zorunlu | sonnet |
 | `kafe-veritabani` | göç, RLS ve RPC yazar; canlıya dokunmaz | sonnet |
+| `kafe-sekreter` | Mustafa ile Muhammed'in ortak sekreteri: durum özeti, hatırlatma, gündem, mesaj taslağı, tutarlılık kontrolü; kod ve belge değiştirmez, karar vermez | sonnet |
+| `/sekreter [istek]` | sekreteri çağırır; boşsa durum özeti | |
 | `/devret`, `/devral` | sıra devri | |
 | `/kaydet` | sohbetteki kararları ve istekleri deftere ya da Konuya yazar | |
 | `/ogret <ajan> <ders>` | ajana kalıcı kural ekler | |
