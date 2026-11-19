@@ -200,6 +200,8 @@ Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 | 29–30 Kas | Garson ve kasa: masa planı, onay, hesap, ödeme |
 | 1 Ara | Yönetim: menü, masalar ve QR, personel, gün sonu; Pro planlara geçilir |
 | 2–4 Ara | Pilot, aynı gün düzeltme |
+| 22–28 Kas | Sosyal medya: profil düzeni, Google İşletme; 24–30 Kas çekim günü (`sosyal-medya-plan.md`) |
+| 1–7 Ara | Yayın öncesi 3 "çok yakında" gönderisi, QR sipariş videosu |
 | 3–7 Ara | Site (özel tasarım), Meta hesapları ve Pixel, QR kartları ve basılı menü (A4'ü uygulama üretir) |
 | 8–9 Ara | Yayın listesi, yayın, ilk kampanya, personel eğitimi |
 

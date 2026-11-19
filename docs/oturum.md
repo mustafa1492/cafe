@@ -23,6 +23,7 @@
 6. [ ] 25 Kas: Supabase (Frankfurt) ve Vercel (geçici adres); 3 Ara: alan adı + Auth adresleri + Meta TXT; 8 Ara: Vercel Pro.
 6b. [ ] Müşteri ekranı adresi `/m/[kafe]/[masa]` kalır; `[masa]` numara değil tahmin edilemez kod olur (iskelette zaten düz metin).
 7. [ ] Geliştir: müşteri menüsü + mutfak → kasa/garson → yönetim. `scripts/kafe-sim.cjs` (3 kişinin aynı anda ödemesi dahil).
+7b. [ ] Sosyal medya (`sosyal-medya-plan.md`): 22–28 Kas profil düzeni, 24–30 Kas çekim, 1–7 Ara yayın öncesi gönderiler, 8 Ara yayın, sonra haftalık döngü.
 8. [ ] Pilot 2–4 Ara; site, Meta ve baskı 3–7 Ara; yayın 8–9 Ara. Plan: `rapor.md` §8, `teknik-plan.md` §7.
 
 ## Günlük (en fazla 10 satır, satır başına tek cümle; başına hesabı yaz)
@@ -31,5 +32,6 @@
 - 19 Kas [Mustafa]: `/is` ile Next.js iskeleti kuruldu (2 tur: tur 1 DÜZELT, tur 2 GEÇTİ).
 - 19 Kas [Mustafa]: Muhammed'in başlangıç yolunda 5 hata düzeltildi (`cd cafe`, `npm install`, Konu adı, ogren sütunu, sıra istisnası).
 - 19 Kas [Mustafa]: teknik plan yazıldı, `ui-ux-pro-max` skill'i eklendi, Muhammed'in planı özetlendi.
+- 19 Kas [Mustafa]: `/is` ile masa QR kartları sayfası (/kafe/yonetim/qr): kodcu + deneyici (haiku) 2 tur, QR OpenCV ile okundu.
 - 19 Kas [Mustafa]: karar: hesabı kasa böler ve kapatır (kasa = yönetici), sipariş doğrudan mutfağa düşer; ilk onay Muhammed'le konuşulacak.
 - 19 Kas [Mustafa]: kararlar: site özel tasarım bu projede, alan adı 3 Ara, Vercel Pro 8 Ara, her masaya 1 QR, siparişi müşteri onaylar, personel onayı yok.

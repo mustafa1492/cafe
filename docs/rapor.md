@@ -137,6 +137,8 @@ Atölyede kapanması gereken açıklar (kafeye canlı sistem kurmadan önce): gi
 
 ## 7. Sosyal medya ve reklam operasyonu
 
+> Uygulama planı (takvim, ilk 4 hafta, haftalık döngü, çekim listesi): `sosyal-medya-plan.md` (19 Kas).
+
 İki hesap: kafenin kendi hesabı (masaya müşteri getirir) ve Mustafa'nın ürün hesabı (bu kafeyi örnek gösterip başka kafelere satar).
 
 | Kanal | Kafe | Mustafa'nın ürünü |

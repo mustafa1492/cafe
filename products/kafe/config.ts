@@ -26,3 +26,27 @@ export const cafeConfig: CafeConfig = {
 export function isKnownCafeSlug(slug: string): boolean {
   return slug === cafeConfig.slug;
 }
+
+/** Örnek masalar. Kod tahmin edilemez (numara değil), QR adresi /m/<slug>/<code>. */
+// ÖRNEK: gerçek masalar veritabanından gelecek
+export const sampleTables: { label: string; code: string }[] = [
+  { label: "Masa 1", code: "vw9b6g3f" },
+  { label: "Masa 2", code: "3v6zahva" },
+  { label: "Masa 3", code: "rcbw9a3p" },
+  { label: "Masa 4", code: "6z45yume" },
+  { label: "Masa 5", code: "v8gkb2es" },
+  { label: "Masa 6", code: "jnejvtr2" },
+  { label: "Masa 7", code: "9636mqe3" },
+  { label: "Masa 8", code: "xg8bhcv2" },
+];
+
+/** Sitenin kök adresi (sondaki / atılır). Ayarlı değilse localhost. */
+export function siteUrl(): string {
+  const v = process.env.NEXT_PUBLIC_SITE_URL;
+  return v && v.trim() ? v.trim().replace(/\/+$/, "") : "http://localhost:3000";
+}
+
+/** Adres ortam değişkeninden mi geliyor? */
+export function siteUrlIsSet(): boolean {
+  return !!process.env.NEXT_PUBLIC_SITE_URL?.trim();
+}

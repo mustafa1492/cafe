@@ -1,7 +1,7 @@
 # Kafe QR Sipariş ve Masa Takip Sistemi
 
 Müşteri masadaki QR kodu okutur, giriş yapmadan sipariş verir. Mutfak siparişleri tabletten görür, garson ve kasa masaları yönetir, kafe sahibi menüyü ve raporları yönetir. **Teslim: 9 Aralık 2026.**
-Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Teknik plan (kurulum, veri modeli, skiller, site, Meta): `docs/teknik-plan.md`. Ekip: `docs/ekip.md`. Kararlar: `docs/kararlar.md`.
+Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Teknik plan (kurulum, veri modeli, skiller, site, Meta): `docs/teknik-plan.md`. Sosyal medya: `docs/sosyal-medya-plan.md`. Ekip: `docs/ekip.md`. Kararlar: `docs/kararlar.md`.
 
 ## 0. Claude'un rolü hesaba göre değişir
 - **Mustafa'nın hesabında çalışan:** teknik işleri yapar, kod yazar, ajanları çalıştırır, karar seçeneklerini kısaca sunar. Mustafa'ya kod öğretmez.
@@ -35,10 +35,11 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Teknik plan 
 | Ad | İş | Model |
 | --- | --- | --- |
 | `kafe-kodcu` | kod yazıcı: tek işi yazar, deneyicinin DÜZELT listesini uygular | sonnet |
-| `kafe-deneyici` | kod deneyici: derler, test ve simülasyon çalıştırır, sayfaları açar; GEÇTİ/DÜZELT döner, uygulama kodunu değiştirmez | sonnet |
+| `kafe-deneyici` | kod deneyici: derler, test ve simülasyon çalıştırır, sayfaları açar; GEÇTİ/DÜZELT döner, uygulama kodunu değiştirmez | haiku |
+| `kafe-tasarimci` | tasarım: ekran ve site için tasarım tarifi yazar (`docs/tasarim/`), kod sonrası ekran görüntüleriyle denetler; TAMAM/DÜZELT; kod yazmaz | sonnet |
 | `kafe-inceleme` | değişikliği kurallara göre denetler; para, sipariş ve veritabanı işinden sonra zorunlu | sonnet |
 | `kafe-veritabani` | göç, RLS ve RPC yazar; canlıya dokunmaz | sonnet |
-| `kafe-sekreter` | ortak sekreter, uyum sağlayıcı ve ana oturumun asistanı (brifing, `docs/oturum.md` kaydı, kural bekçisi): herkes kendi alanına odaklanır, birbirini bölmez; bekleyen/engelleyen işleri öne alır, iki alan arasında çevirir, uyumsuzluğu yakalar; kod ve belge değiştirmez, karar vermez | sonnet |
+| `kafe-sekreter` | ortak sekreter, uyum sağlayıcı ve ana oturumun asistanı (brifing, `docs/oturum.md` kaydı, kural bekçisi): herkes kendi alanına odaklanır, birbirini bölmez; bekleyen/engelleyen işleri öne alır, iki alan arasında çevirir, uyumsuzluğu yakalar; kod ve belge değiştirmez, karar vermez | haiku |
 | `/is <iş>` | bir kod işini ajan ağıyla yürütür: brifing → kodcu ↔ deneyici (en fazla 3 tur) → inceleme → kayıt → push | |
 | `/sekreter [istek]` | sekreteri çağırır; boşsa "şimdi ne yapmalıyım" odak raporu | |
 | `/devret`, `/devral` | sıra devri | |
@@ -48,9 +49,11 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Teknik plan 
 | `/gorusme`, `/aktar` | görüşme hazırlığı; görüşmeden sonra duyulanları Konulara işleme (Muhammed) | |
 | `/tecrube` | Mustafa'nın tecrübesini eğitim notuna ekler | |
 
+**Model seçimi (token tasarrufu):** En sık çağrılan ve işi mekanik olan ajanlar ucuz modelde (haiku) çalışır: deneyici (her tur), sekreter (her iş ve oturum). Kod yazan, tasarım kararı veren ve doğruluğu kritik olanlar sonnet'te çalışır: kodcu, tasarımcı, veritabanı, inceleme. Haiku deneyicinin gözünden kaçabilecek şeyleri sipariş, para ve veritabanı işlerinde zorunlu olan inceleme (sonnet) yakalar. Ana oturum Mustafa'nın seçtiği modeldir. Bir ajan aynı hatayı iki kez yaparsa önce `/ogret` ile ders verilir, model değişikliğine ancak bu işe yaramazsa Mustafa karar verir.
+
 Kod işleri `/is` ile yürür. Ana oturum projeyi yönetir, sekreter onun asistanıdır. Kodcu ile deneyici arasında gidip gelmeyi ana oturum yürütür. Diğer ajanlar iş grubu bitince, devirden önce ya da istenince çağrılır, her küçük değişiklikte çağrılmaz. Yeni ajanı sadece Mustafa ekler.
 
-**Ajan ağı ayrıdır:** Bu repoda sadece `kafe-*` ajanları çalışır, bu ajanlar da sadece bu repoda çalışır. Mustafa'nın diğer projelerindeki ajanlar ve kullanıcı seviyesindeki ajanlar (`site-ustasi`, `web-tasarimci` vb.) burada kullanılmaz. Kritik bir durumda Mustafa açıkça izin verirse tek seferlik çağrılabilir. Ortak çekirdekten (Genelprojeler) bir parça gerekirse onu sadece Mustafa'nın ana oturumu kopyalar ve `docs/core-degisiklikleri.md`'ye yazar.
+**Ajan ağı ayrıdır:** Bu repoda sadece `kafe-*` ajanları çalışır (kodcu, deneyici, tasarımcı, inceleme, veritabanı, sekreter), bu ajanlar da sadece bu repoda çalışır. Mustafa'nın diğer projelerindeki ajanlar ve kullanıcı seviyesindeki ajanlar (`site-ustasi`, `web-tasarimci` vb.) burada kullanılmaz. Kritik bir durumda Mustafa açıkça izin verirse tek seferlik çağrılabilir. Ortak çekirdekten (Genelprojeler) bir parça gerekirse onu sadece Mustafa'nın ana oturumu kopyalar ve `docs/core-degisiklikleri.md`'ye yazar.
 
 ## 5. Ortak çekirdek
 Ortak parçalar `core/`, kafeye özel olanlar `products/kafe/` altında durur. Kafeye özel adlar `products/kafe/config.ts` dosyasındadır, `core/` hiçbir ürünü import etmez. Genel yazmak ucuzsa genel yazılır, pahalıysa yazılmaz; odak teslim tarihi. `core/` altındaki her değişiklik `docs/core-degisiklikleri.md` dosyasına bir satırla yazılır.
