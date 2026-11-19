@@ -72,6 +72,8 @@ Atölyede kapanması gereken açıklar (kafeye canlı sistem kurmadan önce): gi
 - **Karar bekleyen 1 — veritabanı yeri:** Supabase ücretsiz planı kuruluş başına 2 etkin proje; Mustafa'da zaten 2 var. Öneri: kafeye **ayrı kuruluş + Pro (25 $)**, faturası kafenin kartına. Alternatif: Çiftçi Defteri veritabanına eklemek (çekirdek çok işletmeli ama canlı çiftçi verisiyle aynı yer).
 - **Karar bekleyen 2 — yayın yeri:** Vercel ücretsiz planı ticari kullanım için değil. Öneri: **Vercel Pro (20 $)** (20 günlük süre için en az risk). Alternatif: Cloudflare Workers Paid (5 $), Next.js uyarlaması 1–2 gün ek iş.
 
+> Teknik ayrıntı ve güncel dosya haritası: `teknik-plan.md` (19 Kas).
+
 ## 5. Atölye ve Çiftçi Defteri'nden alınacaklar
 
 ### Atölyeden (`mustafa1492/web`)

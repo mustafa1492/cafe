@@ -38,4 +38,9 @@ Repo açılınca `scripts/kurulum-konular.sh` bu dosyadaki her bölümü bir Git
   - Hesabı kim bölecek, müşteri telefondan mı, garson/kasa mı? Muhammed'in tasarımında müşteri bölüyor, bizim raporda kasa.
   - Kafede garson yoksa ilk siparişi kim onaylayacak?
   - Deneme 2 ay ücretsizse ilk 2 ayın masrafını kim ödeyecek? (butce.md kafenin ödeyeceğini varsayıyor)
+- [ ] Teknik plan önerileri (`docs/teknik-plan.md` §0):
+  - Site atölye şablonuyla değil, bu projenin içinde özel tasarımla yapılsın mı?
+  - Alan adı 3 Aralık yerine 25 Kasım'da alınsın mı? (QR kartları son adresle basılacak)
+  - Vercel Pro'ya 8 Aralık yerine 1 Aralık'ta (pilot öncesi) geçilsin mi?
+  - Site atölyeden yayınlanmayacaksa atölyedeki 3 açık kafe takviminden çıkarılsın mı?
 - [ ] Muhammed'in planıyla bizim planımızın farkları (ayrıntı: `docs/arkadas-oturumu.md` ve 19 Kas sohbeti): Firebase mi Supabase mi; çok restoranlı abonelik ürünü mü, önce tek kafe mi; müşterinin kendi hesabını bölmesi; logo/renk marka ayarı; garson/kasa ekranı; masa onayı mı gizli QR kodu mu

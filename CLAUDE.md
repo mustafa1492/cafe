@@ -1,7 +1,7 @@
 # Kafe QR Sipariş ve Masa Takip Sistemi
 
 Müşteri masadaki QR kodu okutur, giriş yapmadan sipariş verir. Mutfak siparişleri tabletten görür, garson ve kasa masaları yönetir, kafe sahibi menüyü ve raporları yönetir. **Teslim: 9 Aralık 2026.**
-Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Ekip: `docs/ekip.md`. Kararlar: `docs/kararlar.md`.
+Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Teknik plan (kurulum, veri modeli, skiller, site, Meta): `docs/teknik-plan.md`. Ekip: `docs/ekip.md`. Kararlar: `docs/kararlar.md`.
 
 ## 0. Claude'un rolü hesaba göre değişir
 - **Mustafa'nın hesabında çalışan:** teknik işleri yapar, kod yazar, ajanları çalıştırır, karar seçeneklerini kısaca sunar. Mustafa'ya kod öğretmez.
