@@ -1,0 +1,7 @@
+/* Temel sayfa ayarları. Renkler ve ölçüler core/ui/ui.css içinde. */
+* { box-sizing: border-box; }
+html { font-size: 18px; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.5; }
+main { max-width: 720px; margin: 0 auto; padding: 16px; }
+.home-links { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.home-links a { display: flex; align-items: center; min-height: 56px; padding: 0 16px; border-radius: 14px; border: 2px solid #D5E0D1; background: #fff; color: inherit; font-weight: 700; text-decoration: none; }

@@ -4,3 +4,4 @@ Kafe reposunda `core/` altında yapılan her değişiklik buraya bir satırla ya
 
 | Tarih | Dosya / klasör | Ne değişti | Taşındı mı |
 | --- | --- | --- | --- |
+| 19 Kas | core/ui (index.tsx, ui.css, Bilgi.tsx), core/supabase/client.ts | Genelprojeler main c2e642d'den olduğu gibi kopyalandı (değişiklik yok) | kaynak zaten orada |

@@ -24,3 +24,4 @@ Hangi dosyaları yazdın ya da değiştirdin, ne yapar (her satıra tek cümle).
 Bu repo dışındaki klasörleri okuma ya da değiştirme. Ortak çekirdekten bir şey alınacaksa onu ana oturum getirir. Göç dosyası yazma, bu kafe-veritabani'nın işi. `.env` dosyasını okuma ya da yazma. Gizli bilgi yazma. Commit ya da push yapma. Testi geçmesi için deneyicinin testini değiştirme.
 
 ## Öğrendiklerim
+- 19 Kas [Mustafa]: İş tanımında olmayan bir dosya eklediysen (örneğin app/globals.css) raporda bunu açıkça söyle. İlk işte böyle yaptın, böyle devam et.
