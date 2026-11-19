@@ -34,5 +34,6 @@
 - 19 Kas [Mustafa]: teknik plan yazıldı, `ui-ux-pro-max` skill'i eklendi, Muhammed'in planı özetlendi.
 - 19 Kas [Mustafa]: `/is` ile masa QR kartları sayfası (/kafe/yonetim/qr): kodcu + deneyici (haiku) 2 tur, QR OpenCV ile okundu.
 - 19 Kas [Mustafa]: `/is` ile gerçek tarayıcı testi (`npm run ekran`): ilk çalıştırma core/ui renk değişkenlerinin tanımsız olduğunu yakaladı (düğmeler okunmuyordu), 2. turda GEÇTİ.
+- 19 Kas [Mustafa]: ajanlar: tasarımcı eklendi, deneyici ve sekreter haiku, sabah raporu (Mustafa: 07.42 zamanlanmış görev; Muhammed: günün ilk oturumunda kanca).
 - 19 Kas [Mustafa]: karar: hesabı kasa böler ve kapatır (kasa = yönetici), sipariş doğrudan mutfağa düşer; ilk onay Muhammed'le konuşulacak.
 - 19 Kas [Mustafa]: kararlar: site özel tasarım bu projede, alan adı 3 Ara, Vercel Pro 8 Ara, her masaya 1 QR, siparişi müşteri onaylar, personel onayı yok.
