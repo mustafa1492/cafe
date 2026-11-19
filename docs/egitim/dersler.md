@@ -27,7 +27,7 @@ Claude bu dersleri `/ogren` ile anlatır. Her ders şu sırayla gider: kısa anl
 
 ## 04 İlk uygulama (deneme dalında)
 - Claude seni `deneme/<adın>` dalına alır. Burada ne yaparsan yap ekibe zarar gelmez.
-- Küçük bir değişiklik iste (ör. bir yazının rengini değiştir), sonra `kafe-test` ile test ettir ve commit et.
+- Küçük bir değişiklik iste (ör. bir yazının rengini değiştir), sonra `kafe-deneyici` ile test ettir ve commit et.
 - Sonra Claude dalı silmeden `gelistirme` dalına geri döner. Deneme dalı push edilmez.
 - Uygulama sonunda şunları bilmelisin: değişiklik iste, sonucu kontrol et, kaydet, geri dön.
 

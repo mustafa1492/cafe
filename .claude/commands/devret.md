@@ -7,7 +7,7 @@ Girdi: **$ARGUMENTS**. Kimden ya da kime eksikse, ya da kişi `docs/nobet.md`'de
 Adımlardan biri başarısız olursa dur ve söyle.
 1. `docs/nobet.md`'de sıra "kimden"de değilse devretme.
 2. Yarım iş varsa derlenebilir hale getir. Getiremiyorsan "Kaldığımız yer"e "YARIM: ..." yaz.
-3. Değişen kısmın testini `kafe-test` ile çalıştır. Para, sipariş ya da veritabanı koduna dokunulduysa `kafe-inceleme`'yi de çalıştır.
+3. Değişen kısmın testini `kafe-deneyici` ile çalıştır. Para, sipariş ya da veritabanı koduna dokunulduysa `kafe-inceleme`'yi de çalıştır.
 4. `docs/oturum.md` → "Kaldığımız yer": 2–4 cümle yaz (ne bitti, ne yarım, sıradaki adım). Günlük'e `[kimden]` ile bir satır ekle.
 5. `docs/nobet.md`: SIRA'yı "kime" yap, tarihi yaz, Geçmiş'e bir satır ekle.
 6. `git add -A && git commit -m "Devir: kimden → kime"`, sonra `git push origin gelistirme`. Push'u `git ls-remote` ile doğrula.

@@ -14,6 +14,7 @@ Sadece `/` yazarsan Claude bütün komutları listeler. Ok tuşlarıyla seçip E
 | `/ogret <ajan> <kural>` | Bir ajan hata yapınca ya da bir şey öğrenmesi gerekince | `/ogret kafe-inceleme Ürün adında emoji olmasın` |
 | `/gorusme <kiminle>` | Muhammed: kafe sahibiyle görüşmeden önce (sorular, istenecekler, mesaj taslağı) | `/gorusme kafe sahibi` |
 | `/aktar [anlatım]` | Muhammed: görüşmeden sonra, duyduklarını anlat, Claude Konulara işlesin | `/aktar Sahip 12 masa dedi, fotoğrafları cuma atacak` |
+| `/is <iş>` | Mustafa (ya da sıra sendeyken Mustafa'nın verdiği iş): bir kod işini ajanlara yaptır | `/is müşteri menüsüne kategori sekmeleri` |
 | `/sekreter [istek]` | Oturum başında: şimdi ne yapmalıyım (tek iş), kim kimi bekliyor; ayrıca gündem ve mesaj taslağı | `/sekreter kafe sahibine fotoğraflar için mesaj yaz` |
 | `/ogren <ad>` | Yeni üyenin eğitimi (her oturumda en fazla 2 ders) | `/ogren Muhammed` |
 | `/tecrube <ne oldu → ne yapıyoruz>` | Sadece Mustafa: tecrübe aktarmak için | `/tecrube Uzun sohbette karar kayboldu → her kararı /kaydet ile yaz` |

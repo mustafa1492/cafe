@@ -34,10 +34,12 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Ekip: `docs/
 ## 4. Ajanlar ve komutlar (`.claude/`)
 | Ad | İş | Model |
 | --- | --- | --- |
-| `kafe-test` | değişen kısmın testini ve simülasyonu çalıştırır | haiku |
+| `kafe-kodcu` | kod yazıcı: tek işi yazar, deneyicinin DÜZELT listesini uygular | sonnet |
+| `kafe-deneyici` | kod deneyici: derler, test ve simülasyon çalıştırır, sayfaları açar; GEÇTİ/DÜZELT döner, uygulama kodunu değiştirmez | sonnet |
 | `kafe-inceleme` | değişikliği kurallara göre denetler; para, sipariş ve veritabanı işinden sonra zorunlu | sonnet |
 | `kafe-veritabani` | göç, RLS ve RPC yazar; canlıya dokunmaz | sonnet |
-| `kafe-sekreter` | ortak sekreter ve uyum sağlayıcı: herkes kendi alanına odaklanır, birbirini bölmez; bekleyen/engelleyen işleri öne alır, iki alan arasında çevirir, uyumsuzluğu yakalar; kod ve belge değiştirmez, karar vermez | sonnet |
+| `kafe-sekreter` | ortak sekreter, uyum sağlayıcı ve ana oturumun asistanı (brifing, `docs/oturum.md` kaydı, kural bekçisi): herkes kendi alanına odaklanır, birbirini bölmez; bekleyen/engelleyen işleri öne alır, iki alan arasında çevirir, uyumsuzluğu yakalar; kod ve belge değiştirmez, karar vermez | sonnet |
+| `/is <iş>` | bir kod işini ajan ağıyla yürütür: brifing → kodcu ↔ deneyici (en fazla 3 tur) → inceleme → kayıt → push | |
 | `/sekreter [istek]` | sekreteri çağırır; boşsa "şimdi ne yapmalıyım" odak raporu | |
 | `/devret`, `/devral` | sıra devri | |
 | `/kaydet` | sohbetteki kararları ve istekleri deftere ya da Konuya yazar | |
@@ -46,7 +48,9 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Ekip: `docs/
 | `/gorusme`, `/aktar` | görüşme hazırlığı; görüşmeden sonra duyulanları Konulara işleme (Muhammed) | |
 | `/tecrube` | Mustafa'nın tecrübesini eğitim notuna ekler | |
 
-Ajanlar iş grubu bitince, devirden önce ya da istenince çağrılır; her küçük değişiklikte çağrılmaz. Yeni ajanı sadece Mustafa ekler.
+Kod işleri `/is` ile yürür. Ana oturum projeyi yönetir, sekreter onun asistanıdır. Kodcu ile deneyici arasında gidip gelmeyi ana oturum yürütür. Diğer ajanlar iş grubu bitince, devirden önce ya da istenince çağrılır, her küçük değişiklikte çağrılmaz. Yeni ajanı sadece Mustafa ekler.
+
+**Ajan ağı ayrıdır:** Bu repoda sadece `kafe-*` ajanları çalışır, bu ajanlar da sadece bu repoda çalışır. Mustafa'nın diğer projelerindeki ajanlar ve kullanıcı seviyesindeki ajanlar (`site-ustasi`, `web-tasarimci` vb.) burada kullanılmaz. Kritik bir durumda Mustafa açıkça izin verirse tek seferlik çağrılabilir. Ortak çekirdekten (Genelprojeler) bir parça gerekirse onu sadece Mustafa'nın ana oturumu kopyalar ve `docs/core-degisiklikleri.md`'ye yazar.
 
 ## 5. Ortak çekirdek
 Ortak parçalar `core/`, kafeye özel olanlar `products/kafe/` altında durur. Kafeye özel adlar `products/kafe/config.ts` dosyasındadır, `core/` hiçbir ürünü import etmez. Genel yazmak ucuzsa genel yazılır, pahalıysa yazılmaz; odak teslim tarihi. `core/` altındaki her değişiklik `docs/core-degisiklikleri.md` dosyasına bir satırla yazılır.

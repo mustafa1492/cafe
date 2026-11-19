@@ -21,7 +21,7 @@ Teslim 9 Aralık 2026 (20 gün). Arkadaşın çalıştığı kafede çalışan b
 
 ## 2. Mevcut durum
 
-Arkadaşın Claude oturumu henüz alınmadı → `arkadas-promptu.md`, gelince `arkadas-oturumu.md`.
+Arkadaşın devir dosyası geldi (`arkadas-oturumu.md`, 19 Kas). Planlar arasındaki farklar "Mustafa: bekleyen kararlar" Konusunda; 4 uyumsuzluk (masa onayı telefon başına mı, hesabı kim böler, garson var mı, deneme süresinde masraf) karar bekliyor.
 
 | Kaynak | Durum | Katkısı |
 | --- | --- | --- |
@@ -68,7 +68,7 @@ Atölyede kapanması gereken açıklar (kafeye canlı sistem kurmadan önce): gi
 - **Müşteri giriş yapmaz:** menüyü okur, siparişi tek kapıdan (`siparis_ver` RPC, SECURITY DEFINER, anon'a açık) gönderir. Kapı masayı, "tükendi"yi, hız sınırını denetler; fiyatı veritabanından alır, müşteriden almaz. Kalıp: atölyedeki `randevu_al` (advisory lock, hata kodları).
 - **Mutfak canlı:** Supabase Realtime; bağlantı koparsa 5 sn'de bir yoklama.
 - **Adresler:** müşteri `/m/<kafe>/<masa>`; personel `/kafe/mutfak`, `/kafe/garson`, `/kafe/yonetim` (girişli).
-- **Kod yeri:** `mustafa1492/genelprojeler`, dal `modul/kafe`. Ortak parçalar `core/`'a; kafeye özel adlar `products/kafe/config.ts`. Ortak parçalara dokunma kuralı: `docs/moduller/README.md` (Core oturumu birleştirir).
+- **Kod yeri:** `mustafa1492/cafe`, dal `gelistirme` (canlı `main`). Ortak parçalar Genelprojeler'deki çekirdekten kopyalanıp `core/` altına konur. Kafeye özel adlar `products/kafe/config.ts` dosyasında durur. `core/` altındaki her değişiklik `docs/core-degisiklikleri.md`'ye yazılır, Mustafa bunları sonra ana çekirdeğe taşır.
 - **Karar bekleyen 1 — veritabanı yeri:** Supabase ücretsiz planı kuruluş başına 2 etkin proje; Mustafa'da zaten 2 var. Öneri: kafeye **ayrı kuruluş + Pro (25 $)**, faturası kafenin kartına. Alternatif: Çiftçi Defteri veritabanına eklemek (çekirdek çok işletmeli ama canlı çiftçi verisiyle aynı yer).
 - **Karar bekleyen 2 — yayın yeri:** Vercel ücretsiz planı ticari kullanım için değil. Öneri: **Vercel Pro (20 $)** (20 günlük süre için en az risk). Alternatif: Cloudflare Workers Paid (5 $), Next.js uyarlaması 1–2 gün ek iş.
 
@@ -117,7 +117,7 @@ Atölyede kapanması gereken açıklar (kafeye canlı sistem kurmadan önce): gi
 | Akış panosu | Whiteboard | Sipariş akışını arkadaşla düzenlemek |
 | Mimari karar | `engineering:architecture`, `engineering:system-design` | 1. gün ADR |
 | Ekran tasarımı | Design (artifact), `frontend-design`, `ui-ux-pro-max` | 5 ekranın düzenlenebilir taslağı |
-| Kodlama | Claude Code (VS Code); `site-ustasi`, `web-tasarimci`, `site-kontrolcu` ajanları | `products/kafe/`, `core/orders/` |
+| Kodlama | Claude Code (VS Code); kafe ajan ağı: `kafe-kodcu` ↔ `kafe-deneyici`, `kafe-inceleme`, `kafe-veritabani`, `kafe-sekreter` (`/is`) | `products/kafe/`, `core/orders/` |
 | Veritabanı | Supabase bağlayıcısı, `data:sql-queries` | Tablolar, RLS, `siparis_ver` |
 | Test ve yayın | `engineering:testing-strategy`, `code-review`, `deploy-checklist`, `debug` | Simülasyon, yayın listesi, pilot hataları |
 | Kafenin sitesi | Atölye | Site, QR kartları, menü A4 |

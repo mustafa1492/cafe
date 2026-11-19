@@ -17,7 +17,8 @@ Sohbette, Konularda ya da yüz yüze alınan her karar ve her istek buraya **tar
 - 19 Kas [Mustafa, claude.ai]: Şimdilik ekip Mustafa ve Muhammed; Gürkan henüz projede değil, onun rolü sonra konuşulacak.
 - 19 Kas [Mustafa, claude.ai]: İş bölümü: Muhammed gerçek hayattaki bağlantıları ve insanlarla ilgili işleri, Mustafa teknik ve yapay zeka işlerini yürütür. Ayrıntı: `docs/ekip.md`.
 - 19 Kas [Mustafa, claude.ai]: Claude, Mustafa'nın hesabında onun çalışanı, Muhammed'in hesabında onun asistanıdır. İkisinin de Claude Pro planı var.
-- 19 Kas [Mustafa, claude.ai]: Mustafa ile Muhammed'in ortak sekreteri olarak `kafe-sekreter` ajanı ve `/sekreter` komutu kuruldu. Amacı: herkes kendi işine ayrı odaklansın, işler birbirine uyumlu ilerlesin.
+- 19 Kas [Mustafa, claude.ai]: Mustafa ile Muhammed'in ortak sekreteri olarak `kafe-sekreter` ajanı ve `/sekreter` komutu kuruldu. Amacı: herkes kendi işine ayrı odaklansın, işler birbirine uyumlu ilerlesin. Sekreter aynı zamanda ana oturumun asistanıdır.
+- 19 Kas [Mustafa, claude.ai]: Kafe ajan ağı ayrı çalışır. Ajanlar sadece bu repoda çalışır, diğer projelerin ajanları burada sadece kritik durumda ve Mustafa'nın izniyle kullanılır. Kod işi kod yazıcı (`kafe-kodcu`) ile kod deneyici (`kafe-deneyici`) arasında gidip gelerek yürür (`/is`). Projeyi ana oturum sekreterle birlikte yönetir.
 
 ## İstekler (henüz yapılmamış)
 - 19 Kas [Mustafa]: Kafe sahibine sorulacaklar Muhammed'e sorulur (ilk Konu).
