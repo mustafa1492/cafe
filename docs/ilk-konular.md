@@ -27,7 +27,10 @@ Repo açılınca `scripts/kurulum-konular.sh` bu dosyadaki her bölümü bir Git
 ## Muhammed: devir dosyası, tasarım, Firebase | atanan: - | etiket: soru
 - [x] Devir dosyası geldi → `docs/arkadas-oturumu.md` (19 Kas)
 - [ ] Planında Firebase vardı; Supabase'e geçmemize itirazın var mı?
-- [ ] Mustafa'yla konuşulacak: müşteri QR'ı okutunca masasını kendisi seçecek (karar 19 Kas). Kafede tek QR mı olsun, her masada ayrı QR mı? Yanlış masa seçilirse ne olsun? (Ödemeyi kimin onaylayacağı karara bağlandı: kasa, 19 Kas.)
+- [ ] **Senin fikrin lazım: QR nasıl çalışsın?** (Ödemeyi kimin onaylayacağı karara bağlandı: kasa, 19 Kas.)
+  - **a) Masaya özel QR:** Her masada o masanın kartı olur. Müşteri okutunca menü "Masa 5" diye açılır. Artısı: müşteri masa seçmekle uğraşmaz, yanlış masa riski yoktur. Eksisi: masa sayısı kadar kart basılır, masalar yer değiştirirse kartlar da taşınır.
+  - **b) QR sonrası masa seçimi:** Kafede aynı QR her yerde olur (masada, kasada, vitrinde). Müşteri okutunca önce masasını seçer. Artısı: tek tasarım, ucuz baskı, masa düzeni değişse de kart değişmez. Eksisi: müşteri yanlış masa seçebilir, evden de bir masa seçip sipariş atabilir. Bu yüzden ilk sipariş onayı daha önemli hale gelir.
+  - Mustafa (b)'ye yakın. Kafeyi sen biliyorsun: hangisi daha uygun, neden?
 - [ ] Mustafa'yla konuşulacak: müşterinin siparişi doğrudan mutfağa düşecek. Evden sahte siparişe karşı her yeni telefonun ilk siparişini kasa ya da garson onaylasın mı, yoksa gizli masa kodu ve hız sınırı yeterli mi?
 
 ## Mustafa: bekleyen kararlar | atanan: mustafa1492 | etiket: karar

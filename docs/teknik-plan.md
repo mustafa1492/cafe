@@ -5,7 +5,7 @@
 > **KARAR BEKLİYOR** diye işaretli maddeler kafe sahibinin cevabını ya da Mustafa'nın kararını bekler.
 
 ## 0. Özet: bu planla değişen 5 şey
-> **19 Kas kararları:** 1 kabul edildi (özel site). 2 ve 3 kabul edilmedi: alan adı 3 Ara'da, Vercel Pro 8 Ara'da alınacak, etkileri §2'de. Masa adresi yerine **müşteri masasını seçecek**. 4 hâlâ açık. 5 plan içinde.
+> **19 Kas kararları:** 1 kabul edildi (özel site). 2 ve 3 kabul edilmedi: alan adı 3 Ara'da, Vercel Pro 8 Ara'da alınacak, etkileri §2'de. Masaya özel QR mı, QR sonrası masa seçimi mi olacağı Muhammed'e soruluyor (Mustafa'nın eğilimi: masa seçimi). 4 hâlâ açık. 5 plan içinde.
 1. **ÖNERİ, site:** Kafenin tanıtım sitesi atölye şablonuyla değil, bu projenin içinde özel tasarımla yapılır (§5). Böylece tek alan adı, tek yayın ve tek menü olur, fiyat da tek yerde durur. Atölyeden QR, çerez izni, kit ve metinler alınır.
 2. **ÖNERİ, alan adı:** Alan adı 3 Aralık'ta değil **25 Kasım'da** alınmalı. QR kartları 5 Aralık'ta basılacak ve kartın üstünde son adres olmalı. Meta alan doğrulaması, Supabase giriş adresleri ve pilot da bu adrese bağlı.
 3. **ÖNERİ, Vercel Pro:** Pilot (2 Aralık) gerçek ticari kullanım olduğu için Vercel Pro'ya **1 Aralık'ta**, Supabase Pro ile aynı gün geçilmeli. Ücretsiz Hobby planı ticari kullanıma kapalı.
@@ -76,7 +76,7 @@
 ```
 kafeadi.com.tr/              → tanıtım sitesi (özel tasarım, statik, Pixel izinle)
 kafeadi.com.tr/menu          → sitedeki menü (veritabanından, sipariş verilmez)
-kafeadi.com.tr/m/<kafe>     → müşteri menüsü: QR okutulur, önce masa seçilir (girişsiz, Pixel yok)
+kafeadi.com.tr/m/<kafe>[/<masa>] → müşteri menüsü (girişsiz, Pixel yok). Masaya özel QR mı, masa seçimi mi: Muhammed'e soruluyor
 kafeadi.com.tr/kafe/mutfak | garson | yonetim → personel (girişli)
 ```
 Menü tek yerde (veritabanında) tutulur. Sitedeki menü, müşteri menüsü ve A4 basılı menü aynı fiyatları gösterir. Bu yasal olarak da gerekli, çünkü basılı liste QR'daki fiyatlarla aynı olmalı.
@@ -84,7 +84,7 @@ Menü tek yerde (veritabanında) tutulur. Sitedeki menü, müşteri menüsü ve 
 ### Veri modeli taslağı (`kafe-veritabani` yazar, Mustafa onaylar)
 Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 - `businesses`: ad, slug, saat dilimi, açık/kapalı, siparişi geçici kapatma.
-- `tables`: etiket ("Masa 5", "Bahçe 2"), bölüm. Müşteri QR'ı okutunca masayı listeden seçer (karar 19 Kas). Seçim telefonda hatırlanır, değiştirilebilir. Yanlış masa seçilirse kasa siparişi doğru masaya taşır. KARAR BEKLİYOR (Muhammed'le): tek QR mı, masa başına QR mı? Seçilen masa kasada açık değilse ne olur? Bu ikincisi ilk onay konusuna bağlı.
+- `tables`: etiket ("Masa 5", "Bahçe 2"), bölüm. KARAR BEKLİYOR (Muhammed'e soruluyor): (a) **masaya özel QR**: her masada ayrı kart vardır, masa kendiliğinden bilinir; ya da (b) **QR sonrası masa seçimi**: müşteri masayı listeden seçer, seçim telefonda hatırlanır. İki yolda da yanlış masaya düşen siparişi kasa doğru masaya taşır. Veri modeli ikisine de uygun kurulur, fark sadece müşteri ekranında olur.
 - `menu_categories`, `menu_items`: ad (TR/EN), açıklama, fiyat, fotoğraf (Supabase Storage), alerjen ve etiket, `sold_out`, sıra.
 - `members`: kişi ve rol. Kasa = yönetici (karar, 19 Kas). Mutfak rolü var. Garson rolü KARAR BEKLİYOR (kafede garson var mı?).
 - `table_sessions`: masanın açık hesabı. Açılır, siparişler ona yazılır, kapanınca masa boşalır.

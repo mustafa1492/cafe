@@ -11,7 +11,7 @@
 - Garson yoksa onayı kim verir?
 - Ücretsiz denemede masrafı kim öder?
 - Atölye açıkları kafe takviminden çıkarılsın mı?
-- Tek QR mı, masa başına QR mı? Yanlış masa seçilirse ne olur? (Muhammed'le, ilk onayla birlikte.)
+- Masaya özel QR mı, QR sonrası masa seçimi mi? Muhammed'e soruluyor (Mustafa'nın eğilimi: seçim), ilk onayla birlikte.
 - Gerçek kafe adı ve slug.
 - Ücretler.
 
@@ -35,4 +35,4 @@
 - 19 Kas [Mustafa]: Muhammed'in başlangıç yolunda 5 hata düzeltildi (`cd cafe`, `npm install`, Konu adı, ogren sütunu, sıra istisnası).
 - 19 Kas [Mustafa]: teknik plan yazıldı, `ui-ux-pro-max` skill'i eklendi, Muhammed'in planı özetlendi.
 - 19 Kas [Mustafa]: karar: hesabı kasa böler ve kapatır (kasa = yönetici), sipariş doğrudan mutfağa düşer; ilk onay Muhammed'le konuşulacak.
-- 19 Kas [Mustafa]: kararlar: site özel tasarım bu projede, alan adı 3 Ara, Vercel Pro 8 Ara, müşteri QR'dan masasını kendisi seçer.
+- 19 Kas [Mustafa]: kararlar: site özel tasarım bu projede, alan adı 3 Ara, Vercel Pro 8 Ara, masaya özel QR mı masa seçimi mi Muhammed'e soruluyor.

@@ -23,7 +23,7 @@ Sohbette, Konularda ya da yüz yüze alınan her karar ve her istek buraya **tar
 - 19 Kas [Mustafa, claude.ai]: Müşteri QR'dan sipariş verir, sipariş sisteme düşer ve mutfakta hazırlanmaya başlar. İlk sipariş onayının kalıp kalmayacağı Muhammed'le konuşulacak.
 - 19 Kas [Mustafa, claude.ai]: Kafenin tanıtım sitesi atölye şablonuyla değil, bu projenin içinde özel tasarımla yapılır (3 yön hazırlanır, kafe sahibi seçer). Atölyeden sadece QR, çerez izni, kit ve metinler alınır.
 - 19 Kas [Mustafa, claude.ai]: Alan adı eski plandaki gibi 3 Aralık'ta alınır. Vercel Pro'ya eski plandaki gibi 8 Aralık'ta (yayında) geçilir.
-- 19 Kas [Mustafa, claude.ai]: Müşteri QR'ı okutunca masasını kendisi seçer (masa numarası adreste yazmaz). Ayrıntılar (tek QR mı, masa başına QR mı; yanlış masa seçilirse ne olur) Muhammed'le ilk onay konusuyla birlikte konuşulacak.
+- 19 Kas [Mustafa, claude.ai]: ~~Müşteri QR'ı okutunca masasını kendisi seçer.~~ Masaya özel QR mı, QR sonrası masa seçimi mi olacağı Muhammed'e sorulacak (Mustafa'nın eğilimi: masa seçimi). İlk onay konusuyla birlikte karara bağlanır.
 
 ## İstekler (henüz yapılmamış)
 - 19 Kas [Mustafa]: Kafe sahibine sorulacaklar Muhammed'e sorulur (ilk Konu).
