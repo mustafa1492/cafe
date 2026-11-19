@@ -27,15 +27,15 @@ Repo açılınca `scripts/kurulum-konular.sh` bu dosyadaki her bölümü bir Git
 ## Muhammed: devir dosyası, tasarım, Firebase | atanan: - | etiket: soru
 - [x] Devir dosyası geldi → `docs/arkadas-oturumu.md` (19 Kas)
 - [ ] Planında Firebase vardı; Supabase'e geçmemize itirazın var mı?
-- [ ] Senin sohbetindeki 2 açık soru: QR adresinde tahmin edilemez masa kodu olsun mu? Ödemeyi kasada kim "alındı" diye onaylayacak (yönetici / mutfak / ayrı kasa rolü)?
+- [ ] Senin sohbetindeki açık soru: QR adresinde tahmin edilemez masa kodu olsun mu? (Ödemeyi kimin onaylayacağı karara bağlandı: kasa, 19 Kas.)
+- [ ] Mustafa'yla konuşulacak: müşterinin siparişi doğrudan mutfağa düşecek. Evden sahte siparişe karşı her yeni telefonun ilk siparişini kasa ya da garson onaylasın mı, yoksa gizli masa kodu ve hız sınırı yeterli mi?
 
 ## Mustafa: bekleyen kararlar | atanan: mustafa1492 | etiket: karar
 - [ ] Yayın yeri: Vercel Pro (öneri, 20 $/ay) mı Cloudflare (5 $/ay, +1–2 gün iş) mı?
 - [ ] Veritabanı: ayrı Supabase kuruluşu + Pro (öneri, 25 $/ay, kafenin kartı) mı?
 - [ ] Ücretler: kurulum, aylık bakım + sosyal medya
 - [ ] 19 Kas kontrolünde bulunan 4 uyumsuzluk:
-  - Garson onayı masa başına mı olacak, her yeni telefonun ilk siparişine mi? (Öneri: telefon başına. Masa başına olursa masa açıkken QR'ın fotoğrafını çeken biri evden sipariş atabilir.)
-  - Hesabı kim bölecek, müşteri telefondan mı, garson/kasa mı? Muhammed'in tasarımında müşteri bölüyor, bizim raporda kasa.
+  - İlk sipariş onayı kalacak mı? Muhammed'le konuşulacak. Kalırsa telefon başına olmalı, çünkü masa başına olursa masa açıkken QR'ın fotoğrafını çeken biri evden sipariş atabilir.
   - Kafede garson yoksa ilk siparişi kim onaylayacak?
   - Deneme 2 ay ücretsizse ilk 2 ayın masrafını kim ödeyecek? (butce.md kafenin ödeyeceğini varsayıyor)
 - [ ] Teknik plan önerileri (`docs/teknik-plan.md` §0):

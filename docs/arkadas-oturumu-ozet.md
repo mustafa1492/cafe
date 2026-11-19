@@ -27,13 +27,13 @@ Kafe ve restoranlara aylık abonelikle satılacak bir QR sipariş uygulaması. M
 | Müşteriye görünmez anonim kimlik | ✅ Bizde cihaz kimliği. Ad ve telefon istenmez |
 | Fiyatı müşteri yazamaz, tükenen ürün reddedilir | ✅ `siparis_ver` kapısı fiyatı veritabanından alır |
 | QR'da tahmin edilemez masa kodu | ❓ Soruldu, cevap yok. Öneri: evet |
-| Ödemeyi kasada kim "alındı" diye onaylar? | ❓ Cevap yok. Seçenekler: yönetici / mutfak / ayrı kasa rolü |
+| Ödemeyi kasada kim "alındı" diye onaylar? | 🔁 Kasa onaylar, kasa da yöneticidir (19 Kas) |
 | Abonelik alanı ve "süper yönetici" | ⏭ Tek kafede gerek yok, ürünleşince |
 | Ödeme kaydında isteğe bağlı müşteri adı (`kisiAdi`) | 🔁 Bizde yok, müşteriden ad istenmez |
 
 ## 4. Ekranlardan neler alınacak
 - **Müşteri:** kategori hapları, ürün kartı (fotoğraf, açıklama, fiyat, +/− sayaç, "Tükendi"), sepet ve mutfağa not, "Siparişlerim" bölümünde 4 adımlı durum (Yeni → Hazırlanıyor → Hazır → Servis edildi), "Garson çağır", alt sekmeler (Menü / Siparişlerim / Hesap). ✅
-- **Hesap bölme ekranı:** masa toplamı, ödenen, kalan, kalem seçimi, "Böl" (2–4 kişi). ❓ Bu ekran müşteride mi olacak, kasada mı? Karar bekliyor.
+- **Hesap bölme ekranı:** masa toplamı, ödenen, kalan, kalem seçimi, "Böl" (2–4 kişi). 🔁 Bu ekran müşteride değil **kasada** olacak (19 Kas). Müşteri sadece toplamı görür ve "Hesap iste" der.
 - **Mutfak:** 4 sütunlu pano, "YENİ GELDİ" rozeti, garson çağrısı şeridi, ürün durumu (Satışta/Tükendi). Fiyat ve ciro görünmez. ✅ Garson çağrısı bizde garson ekranına da düşer.
 - **Yönetici:** günün özeti (ciro, sipariş sayısı, ortalama hesap, en çok satanlar), menü yönetimi, masa sayısı ve QR kartları. ✅ Marka ve renk sekmesi ❓
 - **Görünüm:** Inter yazı tipi, "stone" renk paleti ve elle çizilmiş çizgi ikonlar, emoji yok. Bunlar başlangıç noktası, son görünüm tasarım onayında belirlenecek.

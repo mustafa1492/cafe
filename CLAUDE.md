@@ -60,7 +60,7 @@ Ortak parçalar `core/`, kafeye özel olanlar `products/kafe/` altında durur. K
 - **Teknik:** Next.js (App Router) + TypeScript, PWA. Supabase (Postgres + RLS + Realtime), her tabloda `business_id`. Müşteri sadece `siparis_ver` RPC ile yazar ve fiyat veritabanından alınır. Mutfak ekranı canlıdır, bağlantı koparsa 5 saniyede bir yoklama yapılır.
 - **Adresler:** `/m/<kafe>/<masa>`, `/kafe/mutfak`, `/kafe/garson`, `/kafe/yonetim`.
 - Kod İngilizce yazılır. Para TL, `numeric(12,2)`. Saat dilimi Europe/Istanbul.
-- **Değişmez kararlar:** müşteriden ad veya telefon istenmez. Otomatik servis, masa ya da kuver ücreti yoktur (yasak). Ekranda "masa hesabı" yazar, sistem resmi e-Adisyon değildir. Masanın ilk siparişini garson onaylar ve hız sınırı vardır. Diğer kararlar `docs/kararlar.md` dosyasında.
+- **Değişmez kararlar:** müşteriden ad veya telefon istenmez. Otomatik servis, masa ya da kuver ücreti yoktur (yasak). Ekranda "masa hesabı" yazar, sistem resmi e-Adisyon değildir. Hız sınırı vardır. Masanın ilk siparişini onaylama kuralı Muhammed'le konuşulacak (`docs/kararlar.md`, 19 Kas). Hesabı kasa böler ve kapatır, müşteri bölmez. Diğer kararlar `docs/kararlar.md` dosyasında.
 
 ## 7. Az token
 Oturum başında sadece bu dosya ve kancanın gösterdikleri okunur. `docs/oturum.md` dosyasını `/devral` okur. Diğer belgeler ancak gerektiğinde, ilgili bölümüyle okunur. Dosyalar baştan sona okunmaz, aranır. Bağımsız komutlar tek seferde çalıştırılır. Derleme ve test iş grubu bitince bir kez yapılır. Cevaplar kısa ve Türkçe olur, aynı şey iki kez anlatılmaz.

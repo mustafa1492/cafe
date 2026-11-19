@@ -85,18 +85,19 @@ Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 - `businesses`: ad, slug, saat dilimi, açık/kapalı, siparişi geçici kapatma.
 - `tables`: etiket ("Masa 5", "Bahçe 2"), bölüm, QR kodu. KARAR BEKLİYOR: adreste numara mı gizli kod mu? Öneri: gizli kod, ekranda yine "Masa 5" yazar.
 - `menu_categories`, `menu_items`: ad (TR/EN), açıklama, fiyat, fotoğraf (Supabase Storage), alerjen ve etiket, `sold_out`, sıra.
-- `members`: kişi ve rol. KARAR BEKLİYOR: sahip / mutfak / garson; kasa ayrı mı?
+- `members`: kişi ve rol. Kasa = yönetici (karar, 19 Kas). Mutfak rolü var. Garson rolü KARAR BEKLİYOR (kafede garson var mı?).
 - `table_sessions`: masanın açık hesabı. Açılır, siparişler ona yazılır, kapanınca masa boşalır.
-- `devices`: müşterinin telefonuna verilen rastgele kimlik. Tarayıcıda saklanır, ad ya da telefon tutulmaz. ÖNERİ: garson onayı bu cihaz başına verilir.
+- `devices`: müşterinin telefonuna verilen rastgele kimlik. Tarayıcıda saklanır, ad ya da telefon tutulmaz. İlk sipariş onayı olacaksa bu cihaz başına verilir. Onayın kalıp kalmayacağı Muhammed'le konuşulacak.
 - `orders`, `order_items`: kalem anında ürün adı ve birim fiyatı kopyalanır, sonradan fiyat değişse bile hesap bozulmaz. Durum: yeni → hazırlanıyor → hazır → servis edildi / iptal.
 - `waiter_calls`: garson çağır, hesap iste.
-- `payments`: masa hesabına ödeme (nakit/kart, tutar, hangi kalemler). KARAR BEKLİYOR: hesabı kim böler?
+- `payments`: masa hesabına ödeme (nakit/kart, tutar, hangi kalemler ya da kalemin kaçta kaçı). Hesabı **kasa böler** (karar, 19 Kas). Üç yolu var: kalem seçmek, eşit bölmek (÷N) ve ortak kalemi bölmek. Her ödeme ayrı kayıttır. `odeme_al` RPC'si masa hesabını kilitleyerek (`FOR UPDATE`) çalışır, kalanı aşan ödeme reddedilir, böylece aynı anda yapılan iki ödeme çift tahsilata yol açmaz. Kalan sıfıra inince masa "ödendi" olur. Her ödemeden sonra "Geri al" çıkar.
 - `activity`: kim neyi ne zaman değiştirdi (geri al ve iz).
 
 ### Kapılar (RPC, hepsi `SECURITY DEFINER`, sabit `search_path`, sabit hata kodları)
-- `siparis_ver(masa_kodu, cihaz, kalemler, not)`: Masa açık mı, cihaz onaylı mı, ürün tükenmiş mi, hız sınırı aşılmış mı kontrol eder. Fiyatı veritabanından alır. Hız sınırının sayısı KARAR BEKLİYOR.
+- `siparis_ver(masa_kodu, cihaz, kalemler, not)`: Sipariş doğrudan mutfağa "yeni" olarak düşer. Masa açık mı, (onay kalırsa) cihaz onaylı mı, ürün tükenmiş mi, hız sınırı aşılmış mı kontrol eder. Fiyatı veritabanından alır. Hız sınırının sayısı KARAR BEKLİYOR.
 - `garson_cagir(masa_kodu, cihaz, tur)`.
-- `masa_durumu(masa_kodu, cihaz)`: Müşteri kendi siparişlerinin durumunu ve masa hesabını bununla okur.
+- `masa_durumu(masa_kodu, cihaz)`: Müşteri kendi siparişlerinin durumunu ve masa hesabının toplamını bununla okur. Bölme yapmaz, sadece "Hesap iste" der.
+- `odeme_al(masa, tutar ya da kalemler, yöntem)`: sadece kasa (yönetici) çağırır, kilitli çalışır.
 
 ### Canlılık
 - **Personel ekranları:** Supabase Realtime ile çalışır. Bağlantı koparsa 5 saniyede bir yoklama yapılır ve ekranda "bağlantı koptu" yazar.
@@ -207,6 +208,8 @@ Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 | Alan adı geç alınırsa QR kartlar yanlış adresle basılır | Alan adı 25 Kas'ta alınır, kartlar ancak alan adı yayındayken basılır |
 | Mutfak tableti sesi çalmaz ya da ekran kararır | "Sesi aç" düğmesi, Wake Lock, pilotta gerçek tablette denenir |
 | Wi-Fi kopar | Personel ekranında "bağlantı koptu" uyarısı ve yoklama; garson elle sipariş girer (`core/offline`) |
+| Aynı masada aynı anda birden çok ödeme | Her ödeme ayrı kayıt, `odeme_al` kilitli; simülasyonda 3 kişinin aynı anda ödemesi denenir |
+| Kasa yavaşlar | Tek ekran: masa → tutar → nakit/kart; tutarlar hazır, klavye yok; pilotta bir ödemenin 2–3 saniyeyi geçmediği ölçülür |
 | Fiyat hilesi / sahte sipariş | Fiyat sadece veritabanından alınır, cihaz onayı ve hız sınırı uygulanır, masa kodu gizli tutulur (öneri) |
 | Supabase giriş adresi yanlış kalır | 25 Kas'ta ayarlanır, pilot listesinde tekrar kontrol edilir |
 | Ücretsiz plan durur ya da ticari kullanıma kapalıdır | 1 Ara'da iki Pro plana geçilir |

@@ -67,7 +67,7 @@ Yaklaşan (3 gün): <tarihli işler> · Uyumsuzluk: <varsa>
 
 ## Öğrendiklerim
 - 19 Kas [Mustafa]: Bir belge geldiğinde "geldi" demek yetmez. Hangi belgelere işlendiğini kontrol et. Muhammed'in devir dosyası gelmişti ama rapora işlenmemişti, rapor hâlâ "henüz gelmedi" diyordu.
-- 19 Kas [Mustafa]: Muhammed'in planıyla bizim plan arasında açık 4 uyumsuzluk var. (1) Garson onayı masa başına mı, yoksa her yeni telefonun ilk siparişine mi (öneri: telefon başına)? (2) Hesabı müşteri mi böler, garson/kasa mı? (3) Kafede garson var mı, yoksa onayı kim verir? (4) 2 aylık deneme ücretsizse ilk 2 ayın masrafını kim öder? Bunlar karara bağlanana kadar her durum raporunun "Uyumsuzluk" satırında durur.
+- 19 Kas [Mustafa]: Muhammed'in planıyla bizim plan arasında açık 4 uyumsuzluk vardı. 19 Kas güncellemesi: (2) çözüldü, hesabı kasa böler. (1) için Mustafa ile Muhammed konuşacak. Kalanlar: (1) Garson onayı masa başına mı, yoksa her yeni telefonun ilk siparişine mi (öneri: telefon başına)? (2) Hesabı müşteri mi böler, garson/kasa mı? (3) Kafede garson var mı, yoksa onayı kim verir? (4) 2 aylık deneme ücretsizse ilk 2 ayın masrafını kim öder? Bunlar karara bağlanana kadar her durum raporunun "Uyumsuzluk" satırında durur.
 - 19 Kas [Mustafa]: Repo adı `mustafa1492/cafe` (kafe değil).
 - 19 Kas [Mustafa]: Bulut oturumundan GitHub Konusu ve etiket açılamıyor, repo ayarı da değiştirilemiyor. Bu işler Mustafa'nın ya da Muhammed'in bilgisayarındaki Claude Code'dan yapılır. Konular açılmadıysa bunu hatırlat (`scripts/kurulum-konular.sh`).
 - 19 Kas [Mustafa]: Atölyedeki 3 açığın (giriş koruması, yedek, onay e-postası) site haftasına (3–7 Ara) kayması bir öneridir, karar değildir. Mustafa onaylamadan planı bu şekilde değiştirme.
