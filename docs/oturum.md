@@ -6,12 +6,9 @@
 19 Kas akşamı oturum kapandı. Hazırlık bitti: kurallar, ajan ağı (`/is`), Next.js iskeleti, teknik plan (`teknik-plan.md`), Muhammed'in planının özeti (`arkadas-oturumu-ozet.md`). Muhammed'in başlangıç yolu kontrol edildi. **20 Kas sabahı ilk iş (Mustafa, kendi bilgisayarından):** (1) Muhammed'i collaborator olarak ekle ve GitHub adını oturuma yaz; ana oturum bu adı `ekip.md`, `nobet.md` ve `ilk-konular.md`'deki "atanan: -" yerlerine işler. (2) `bash scripts/kurulum-konular.sh` çalıştır. (3) Varsayılan dalı `main` yap. Sonra Muhammed kurulum, `/ogren` ve `/gorusme kafe sahibi` ile devam eder. Kafe sahibiyle görüşme 21 Kas.
 
 **Bekleyen kararlar (Mustafa):**
-- İlk sipariş onayı kalacak mı? Muhammed'le konuşulacak.
 - Kafede garson var mı? Cevaba göre rol yapısı ve `core/auth` belirlenir.
-- Garson yoksa onayı kim verir?
 - Ücretsiz denemede masrafı kim öder?
 - Atölye açıkları kafe takviminden çıkarılsın mı?
-- Masaya özel QR mı, QR sonrası masa seçimi mi? Muhammed'e soruluyor (Mustafa'nın eğilimi: seçim), ilk onayla birlikte.
 - Gerçek kafe adı ve slug.
 - Ücretler.
 
@@ -24,7 +21,7 @@
 4. [~] Next.js iskeleti ve ortak parçalar: iskelet, `core/ui` ve `core/supabase` bitti; `core/auth` garson kararını bekliyor.
 5. [ ] 5 ekran + 3 site yönü (Design), veri modeli, RLS, `siparis_ver`, `odeme_al` (kilitli, çok kişili ödeme).
 6. [ ] 25 Kas: Supabase (Frankfurt) ve Vercel (geçici adres); 3 Ara: alan adı + Auth adresleri + Meta TXT; 8 Ara: Vercel Pro.
-6b. [ ] Müşteri ekranı adresi `/m/[kafe]/[masa]` → `/m/[kafe]` + masa seçimi (iskeletteki yer tutucu değişecek).
+6b. [ ] Müşteri ekranı adresi `/m/[kafe]/[masa]` kalır; `[masa]` numara değil tahmin edilemez kod olur (iskelette zaten düz metin).
 7. [ ] Geliştir: müşteri menüsü + mutfak → kasa/garson → yönetim. `scripts/kafe-sim.cjs` (3 kişinin aynı anda ödemesi dahil).
 8. [ ] Pilot 2–4 Ara; site, Meta ve baskı 3–7 Ara; yayın 8–9 Ara. Plan: `rapor.md` §8, `teknik-plan.md` §7.
 
@@ -35,4 +32,4 @@
 - 19 Kas [Mustafa]: Muhammed'in başlangıç yolunda 5 hata düzeltildi (`cd cafe`, `npm install`, Konu adı, ogren sütunu, sıra istisnası).
 - 19 Kas [Mustafa]: teknik plan yazıldı, `ui-ux-pro-max` skill'i eklendi, Muhammed'in planı özetlendi.
 - 19 Kas [Mustafa]: karar: hesabı kasa böler ve kapatır (kasa = yönetici), sipariş doğrudan mutfağa düşer; ilk onay Muhammed'le konuşulacak.
-- 19 Kas [Mustafa]: kararlar: site özel tasarım bu projede, alan adı 3 Ara, Vercel Pro 8 Ara, masaya özel QR mı masa seçimi mi Muhammed'e soruluyor.
+- 19 Kas [Mustafa]: kararlar: site özel tasarım bu projede, alan adı 3 Ara, Vercel Pro 8 Ara, her masaya 1 QR, siparişi müşteri onaylar, personel onayı yok.

@@ -58,9 +58,9 @@ Ortak parçalar `core/`, kafeye özel olanlar `products/kafe/` altında durur. K
 ## 6. Ürün kuralları
 - **Arayüz:** ekran başına tek ana iş. Düğmeler en az 56 px, yazı en az 16 px. Klavye yerine −/+ ve seçim düğmeleri kullanılır. Renk her zaman yazıyla birlikte verilir. Onay penceresi yerine "Geri al" olur. Arayüz Türkçe, müşteri menüsü TR/EN.
 - **Teknik:** Next.js (App Router) + TypeScript, PWA. Supabase (Postgres + RLS + Realtime), her tabloda `business_id`. Müşteri sadece `siparis_ver` RPC ile yazar ve fiyat veritabanından alınır. Mutfak ekranı canlıdır, bağlantı koparsa 5 saniyede bir yoklama yapılır.
-- **Adresler:** müşteri menüsü `/m/<kafe>/<masa>` (masaya özel QR) ya da `/m/<kafe>` + masa seçimi; hangisi olacağı Muhammed'e soruluyor (19 Kas), `/kafe/mutfak`, `/kafe/garson`, `/kafe/yonetim`. Tanıtım sitesi aynı uygulamada `/` altında, özel tasarım.
+- **Adresler:** müşteri menüsü `/m/<kafe>/<masa-kodu>` (her masaya 1 QR, kod tahmin edilemez, ekranda "Masa 5" yazar), `/kafe/mutfak`, `/kafe/garson`, `/kafe/yonetim`. Tanıtım sitesi aynı uygulamada `/` altında, özel tasarım.
 - Kod İngilizce yazılır. Para TL, `numeric(12,2)`. Saat dilimi Europe/Istanbul.
-- **Değişmez kararlar:** müşteriden ad veya telefon istenmez. Otomatik servis, masa ya da kuver ücreti yoktur (yasak). Ekranda "masa hesabı" yazar, sistem resmi e-Adisyon değildir. Hız sınırı vardır. Masanın ilk siparişini onaylama kuralı Muhammed'le konuşulacak (`docs/kararlar.md`, 19 Kas). Hesabı kasa böler ve kapatır, müşteri bölmez. Diğer kararlar `docs/kararlar.md` dosyasında.
+- **Değişmez kararlar:** müşteriden ad veya telefon istenmez. Otomatik servis, masa ya da kuver ücreti yoktur (yasak). Ekranda "masa hesabı" yazar, sistem resmi e-Adisyon değildir. Hız sınırı vardır. Siparişi müşteri onaylar (masası ve sepeti görünür, "Siparişi gönder"), personel onayı yoktur, sipariş doğrudan mutfağa düşer. Hesabı kasa böler ve kapatır, müşteri bölmez. Diğer kararlar `docs/kararlar.md` dosyasında.
 
 ## 7. Az token
 Oturum başında sadece bu dosya ve kancanın gösterdikleri okunur. `docs/oturum.md` dosyasını `/devral` okur. Diğer belgeler ancak gerektiğinde, ilgili bölümüyle okunur. Dosyalar baştan sona okunmaz, aranır. Bağımsız komutlar tek seferde çalıştırılır. Derleme ve test iş grubu bitince bir kez yapılır. Cevaplar kısa ve Türkçe olur, aynı şey iki kez anlatılmaz.

@@ -5,7 +5,7 @@
 > **KARAR BEKLİYOR** diye işaretli maddeler kafe sahibinin cevabını ya da Mustafa'nın kararını bekler.
 
 ## 0. Özet: bu planla değişen 5 şey
-> **19 Kas kararları:** 1 kabul edildi (özel site). 2 ve 3 kabul edilmedi: alan adı 3 Ara'da, Vercel Pro 8 Ara'da alınacak, etkileri §2'de. Masaya özel QR mı, QR sonrası masa seçimi mi olacağı Muhammed'e soruluyor (Mustafa'nın eğilimi: masa seçimi). 4 hâlâ açık. 5 plan içinde.
+> **19 Kas kararları:** 1 kabul edildi (özel site). 2 ve 3 kabul edilmedi: alan adı 3 Ara'da, Vercel Pro 8 Ara'da alınacak, etkileri §2'de. Karar: her masaya 1 QR, siparişi müşteri onaylar, personel onayı yok. 4 hâlâ açık. 5 plan içinde.
 1. **ÖNERİ, site:** Kafenin tanıtım sitesi atölye şablonuyla değil, bu projenin içinde özel tasarımla yapılır (§5). Böylece tek alan adı, tek yayın ve tek menü olur, fiyat da tek yerde durur. Atölyeden QR, çerez izni, kit ve metinler alınır.
 2. **ÖNERİ, alan adı:** Alan adı 3 Aralık'ta değil **25 Kasım'da** alınmalı. QR kartları 5 Aralık'ta basılacak ve kartın üstünde son adres olmalı. Meta alan doğrulaması, Supabase giriş adresleri ve pilot da bu adrese bağlı.
 3. **ÖNERİ, Vercel Pro:** Pilot (2 Aralık) gerçek ticari kullanım olduğu için Vercel Pro'ya **1 Aralık'ta**, Supabase Pro ile aynı gün geçilmeli. Ücretsiz Hobby planı ticari kullanıma kapalı.
@@ -76,7 +76,7 @@
 ```
 kafeadi.com.tr/              → tanıtım sitesi (özel tasarım, statik, Pixel izinle)
 kafeadi.com.tr/menu          → sitedeki menü (veritabanından, sipariş verilmez)
-kafeadi.com.tr/m/<kafe>[/<masa>] → müşteri menüsü (girişsiz, Pixel yok). Masaya özel QR mı, masa seçimi mi: Muhammed'e soruluyor
+kafeadi.com.tr/m/<kafe>/<masa-kodu> → masadaki müşteri menüsü (her masaya 1 QR, girişsiz, Pixel yok)
 kafeadi.com.tr/kafe/mutfak | garson | yonetim → personel (girişli)
 ```
 Menü tek yerde (veritabanında) tutulur. Sitedeki menü, müşteri menüsü ve A4 basılı menü aynı fiyatları gösterir. Bu yasal olarak da gerekli, çünkü basılı liste QR'daki fiyatlarla aynı olmalı.
@@ -84,18 +84,18 @@ Menü tek yerde (veritabanında) tutulur. Sitedeki menü, müşteri menüsü ve 
 ### Veri modeli taslağı (`kafe-veritabani` yazar, Mustafa onaylar)
 Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 - `businesses`: ad, slug, saat dilimi, açık/kapalı, siparişi geçici kapatma.
-- `tables`: etiket ("Masa 5", "Bahçe 2"), bölüm. KARAR BEKLİYOR (Muhammed'e soruluyor): (a) **masaya özel QR**: her masada ayrı kart vardır, masa kendiliğinden bilinir; ya da (b) **QR sonrası masa seçimi**: müşteri masayı listeden seçer, seçim telefonda hatırlanır. İki yolda da yanlış masaya düşen siparişi kasa doğru masaya taşır. Veri modeli ikisine de uygun kurulur, fark sadece müşteri ekranında olur.
+- `tables`: etiket ("Masa 5", "Bahçe 2"), bölüm. Her masaya 1 QR (karar 19 Kas). Her masanın tahmin edilemez bir kodu olur, QR bu kodu açar. Kart kaybolursa ya da fotoğrafı yayılırsa yönetimden "kodu yenile" denir, eski QR çalışmaz olur. Yanlış masaya düşen siparişi kasa doğru masaya taşır.
 - `menu_categories`, `menu_items`: ad (TR/EN), açıklama, fiyat, fotoğraf (Supabase Storage), alerjen ve etiket, `sold_out`, sıra.
 - `members`: kişi ve rol. Kasa = yönetici (karar, 19 Kas). Mutfak rolü var. Garson rolü KARAR BEKLİYOR (kafede garson var mı?).
 - `table_sessions`: masanın açık hesabı. Açılır, siparişler ona yazılır, kapanınca masa boşalır.
-- `devices`: müşterinin telefonuna verilen rastgele kimlik. Tarayıcıda saklanır, ad ya da telefon tutulmaz. İlk sipariş onayı olacaksa bu cihaz başına verilir. Onayın kalıp kalmayacağı Muhammed'le konuşulacak.
+- `devices`: müşterinin telefonuna verilen rastgele kimlik. Tarayıcıda saklanır, ad ya da telefon tutulmaz. Hız sınırı ve "Siparişlerim" bu kimliğe göre çalışır. Personel onayı yok (karar 19 Kas).
 - `orders`, `order_items`: kalem anında ürün adı ve birim fiyatı kopyalanır, sonradan fiyat değişse bile hesap bozulmaz. Durum: yeni → hazırlanıyor → hazır → servis edildi / iptal.
 - `waiter_calls`: garson çağır, hesap iste.
 - `payments`: masa hesabına ödeme (nakit/kart, tutar, hangi kalemler ya da kalemin kaçta kaçı). Hesabı **kasa böler** (karar, 19 Kas). Üç yolu var: kalem seçmek, eşit bölmek (÷N) ve ortak kalemi bölmek. Her ödeme ayrı kayıttır. `odeme_al` RPC'si masa hesabını kilitleyerek (`FOR UPDATE`) çalışır, kalanı aşan ödeme reddedilir, böylece aynı anda yapılan iki ödeme çift tahsilata yol açmaz. Kalan sıfıra inince masa "ödendi" olur. Her ödemeden sonra "Geri al" çıkar.
 - `activity`: kim neyi ne zaman değiştirdi (geri al ve iz).
 
 ### Kapılar (RPC, hepsi `SECURITY DEFINER`, sabit `search_path`, sabit hata kodları)
-- `siparis_ver(masa_kodu, cihaz, kalemler, not)`: Sipariş doğrudan mutfağa "yeni" olarak düşer. Masa açık mı, (onay kalırsa) cihaz onaylı mı, ürün tükenmiş mi, hız sınırı aşılmış mı kontrol eder. Fiyatı veritabanından alır. Hız sınırının sayısı KARAR BEKLİYOR.
+- `siparis_ver(masa_kodu, cihaz, kalemler, not)`: Müşteri sepet ekranında masasını ve kalemleri görüp "Siparişi gönder"e basınca çağrılır. Sipariş doğrudan mutfağa "yeni" olarak düşer. Masa kodu geçerli mi, ürün tükenmiş mi, hız sınırı aşılmış mı kontrol eder. Fiyatı veritabanından alır. Hız sınırının sayısı KARAR BEKLİYOR.
 - `garson_cagir(masa_kodu, cihaz, tur)`.
 - `masa_durumu(masa_kodu, cihaz)`: Müşteri kendi siparişlerinin durumunu ve masa hesabının toplamını bununla okur. Bölme yapmaz, sadece "Hesap iste" der.
 - `odeme_al(masa, tutar ya da kalemler, yöntem)`: sadece kasa (yönetici) çağırır, kilitli çalışır.
@@ -211,7 +211,7 @@ Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 | Wi-Fi kopar | Personel ekranında "bağlantı koptu" uyarısı ve yoklama; garson elle sipariş girer (`core/offline`) |
 | Aynı masada aynı anda birden çok ödeme | Her ödeme ayrı kayıt, `odeme_al` kilitli; simülasyonda 3 kişinin aynı anda ödemesi denenir |
 | Kasa yavaşlar | Tek ekran: masa → tutar → nakit/kart; tutarlar hazır, klavye yok; pilotta bir ödemenin 2–3 saniyeyi geçmediği ölçülür |
-| Fiyat hilesi / sahte sipariş | Fiyat sadece veritabanından alınır, hız sınırı vardır. Müşteri masayı kendisi seçtiği için evden ya da yanlış masaya sipariş riski artar. İlk sipariş onayı ve "masa kasada açık mı" kontrolü bu riski azaltır (Muhammed'le konuşulacak) |
+| Fiyat hilesi / sahte sipariş | Fiyat sadece veritabanından alınır, hız sınırı vardır. Personel onayı olmadığı için QR'ın fotoğrafını çeken biri evden sipariş atabilir. Önlemler: tahmin edilemez masa kodu, cihaz ve masa başına hız sınırı, yönetimde "kodu yenile" ve mutfakta "iptal" düğmesi. Pilotta kötüye kullanım görülürse onay yeniden konuşulur |
 | Supabase giriş adresi yanlış kalır | 25 Kas'ta ayarlanır, pilot listesinde tekrar kontrol edilir |
 | Ücretsiz plan durur ya da ticari kullanıma kapalıdır | 1 Ara'da iki Pro plana geçilir |
 | Site yavaş açılır | Görseller optimize edilir, LCP ölçülür, ağır efekt kullanılmaz |

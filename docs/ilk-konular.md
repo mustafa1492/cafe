@@ -27,18 +27,13 @@ Repo açılınca `scripts/kurulum-konular.sh` bu dosyadaki her bölümü bir Git
 ## Muhammed: devir dosyası, tasarım, Firebase | atanan: - | etiket: soru
 - [x] Devir dosyası geldi → `docs/arkadas-oturumu.md` (19 Kas)
 - [ ] Planında Firebase vardı; Supabase'e geçmemize itirazın var mı?
-- [ ] **Senin fikrin lazım: QR nasıl çalışsın?** (Ödemeyi kimin onaylayacağı karara bağlandı: kasa, 19 Kas.)
-  - **a) Masaya özel QR:** Her masada o masanın kartı olur. Müşteri okutunca menü "Masa 5" diye açılır. Artısı: müşteri masa seçmekle uğraşmaz, yanlış masa riski yoktur. Eksisi: masa sayısı kadar kart basılır, masalar yer değiştirirse kartlar da taşınır.
-  - **b) QR sonrası masa seçimi:** Kafede aynı QR her yerde olur (masada, kasada, vitrinde). Müşteri okutunca önce masasını seçer. Artısı: tek tasarım, ucuz baskı, masa düzeni değişse de kart değişmez. Eksisi: müşteri yanlış masa seçebilir, evden de bir masa seçip sipariş atabilir. Bu yüzden ilk sipariş onayı daha önemli hale gelir.
-  - Mustafa (b)'ye yakın. Kafeyi sen biliyorsun: hangisi daha uygun, neden?
-- [ ] Mustafa'yla konuşulacak: müşterinin siparişi doğrudan mutfağa düşecek. Evden sahte siparişe karşı her yeni telefonun ilk siparişini kasa ya da garson onaylasın mı, yoksa gizli masa kodu ve hız sınırı yeterli mi?
+- [x] Bilgi (19 Kas, Mustafa'nın kararı): her masaya 1 QR olacak. Siparişi müşteri kendisi onaylayıp gönderecek, sipariş doğrudan mutfağa düşecek, kasa ya da garson onayı olmayacak. Pilotta sorun görürsen yaz.
 
 ## Mustafa: bekleyen kararlar | atanan: mustafa1492 | etiket: karar
 - [ ] Yayın yeri: Vercel Pro (öneri, 20 $/ay) mı Cloudflare (5 $/ay, +1–2 gün iş) mı?
 - [ ] Veritabanı: ayrı Supabase kuruluşu + Pro (öneri, 25 $/ay, kafenin kartı) mı?
 - [ ] Ücretler: kurulum, aylık bakım + sosyal medya
 - [ ] 19 Kas kontrolünde bulunan 4 uyumsuzluk:
-  - İlk sipariş onayı kalacak mı? Muhammed'le konuşulacak. Kalırsa telefon başına olmalı, çünkü masa başına olursa masa açıkken QR'ın fotoğrafını çeken biri evden sipariş atabilir.
   - Kafede garson yoksa ilk siparişi kim onaylayacak?
   - Deneme 2 ay ücretsizse ilk 2 ayın masrafını kim ödeyecek? (butce.md kafenin ödeyeceğini varsayıyor)
 - [x] Teknik plan önerileri (19 Kas): site özel tasarım; alan adı 3 Ara; Vercel Pro 8 Ara; müşteri masasını kendisi seçer.

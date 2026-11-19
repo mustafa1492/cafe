@@ -20,10 +20,10 @@ Sohbette, Konularda ya da yüz yüze alınan her karar ve her istek buraya **tar
 - 19 Kas [Mustafa, claude.ai]: Mustafa ile Muhammed'in ortak sekreteri olarak `kafe-sekreter` ajanı ve `/sekreter` komutu kuruldu. Amacı: herkes kendi işine ayrı odaklansın, işler birbirine uyumlu ilerlesin. Sekreter aynı zamanda ana oturumun asistanıdır.
 - 19 Kas [Mustafa, claude.ai]: Kafe ajan ağı ayrı çalışır. Ajanlar sadece bu repoda çalışır, diğer projelerin ajanları burada sadece kritik durumda ve Mustafa'nın izniyle kullanılır. Kod işi kod yazıcı (`kafe-kodcu`) ile kod deneyici (`kafe-deneyici`) arasında gidip gelerek yürür (`/is`). Projeyi ana oturum sekreterle birlikte yönetir.
 - 19 Kas [Mustafa, claude.ai]: Hesap bölmeye kasa karar verir, müşteri telefondan bölme yapmaz. Ödeme alma, hesabı bölme ve masayı kapatma kasada yapılır, kasa yönetimin elindedir (kasa = yönetici rolü). Bir masada birden çok kişi ayrı ayrı ödeyebilir: her ödeme ayrı kayıt olur, kalan tutar kayıtlardan hesaplanır, aynı kaleme çift ödeme alınamaz.
-- 19 Kas [Mustafa, claude.ai]: Müşteri QR'dan sipariş verir, sipariş sisteme düşer ve mutfakta hazırlanmaya başlar. İlk sipariş onayının kalıp kalmayacağı Muhammed'le konuşulacak.
+- 19 Kas [Mustafa, claude.ai]: Müşteri QR'dan sipariş verir, sipariş sisteme düşer ve mutfakta hazırlanmaya başlar. ~~İlk sipariş onayı Muhammed'le konuşulacak.~~ Personel onayı yok, müşteri onaylar (19 Kas, aşağıda).
 - 19 Kas [Mustafa, claude.ai]: Kafenin tanıtım sitesi atölye şablonuyla değil, bu projenin içinde özel tasarımla yapılır (3 yön hazırlanır, kafe sahibi seçer). Atölyeden sadece QR, çerez izni, kit ve metinler alınır.
 - 19 Kas [Mustafa, claude.ai]: Alan adı eski plandaki gibi 3 Aralık'ta alınır. Vercel Pro'ya eski plandaki gibi 8 Aralık'ta (yayında) geçilir.
-- 19 Kas [Mustafa, claude.ai]: ~~Müşteri QR'ı okutunca masasını kendisi seçer.~~ Masaya özel QR mı, QR sonrası masa seçimi mi olacağı Muhammed'e sorulacak (Mustafa'nın eğilimi: masa seçimi). İlk onay konusuyla birlikte karara bağlanır.
+- 19 Kas [Mustafa, claude.ai]: ~~Müşteri QR'ı okutunca masasını kendisi seçer.~~ ~~Muhammed'e sorulacak.~~ **Her masaya 1 QR** (masaya özel). Siparişi müşteri kendisi onaylar: gönderirken ekranda masası ve sepeti görünür, "Siparişi gönder" der, sipariş doğrudan mutfağa düşer. Kasa ya da garson onayı yoktur. QR adresinde masa numarası yerine tahmin edilemez kod olur (teknik tercih), ekranda yine "Masa 5" yazar.
 
 ## İstekler (henüz yapılmamış)
 - 19 Kas [Mustafa]: Kafe sahibine sorulacaklar Muhammed'e sorulur (ilk Konu).
