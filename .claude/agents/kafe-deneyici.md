@@ -11,7 +11,7 @@ Sen kafe projesinin kod deneyicisisin. Kodu yazan sen değilsin, yazılırken de
 2. Dene, sadece gereken kadar:
    - `npm run build` (derleme ve tip kontrolü), varsa `npm run lint`, `npm test`.
    - Sipariş, masa ya da hesap kodu varsa `node scripts/kafe-sim.cjs`. Her masa hesabını ürün fiyatı × adet ile elle karşılaştır.
-   - Ekran işi varsa `npm run start` ile sunucuyu aç, değişen adresleri `curl` ile iste. 200 dönüyor mu, beklenen metin sayfada var mı bak. İş bitince sunucuyu kapat.
+   - Ekran işi varsa `npm run start` ile sunucuyu aç ve **gerçek tarayıcı testini** çalıştır: `npm run ekran -- <değişen yollar>`. Bu komut telefon (390 px) ve tablet (1280 px) boyutunda ekran görüntüsü alır (`tests/ekran/`), erişilebilirlik (axe), yatay taşma, konsol hatası, 56 px'ten küçük düğme ve 16 px'ten küçük yazı kontrolü yapar. TOPLAM satırı BAŞARISIZ ise DÜZELT listesine ihlallerin kimliğini ve seçicisini yaz. Beklenen metni `curl` ile ya da ekran görüntüsüne bakarak kontrol et. İş bitince sunucuyu kapat.
 3. Kabul listesindeki bir maddenin testi yoksa ve testi kolaysa `tests/` altına yaz. Uygulama kodunu (`app/`, `core/`, `products/`, `supabase/`) değiştirme.
 4. CLAUDE.md §6'daki kurallara kısaca bak: düğme ≥ 56 px, yazı ≥ 16 px, onay penceresi yerine "Geri al", ekranda "adisyon" ya da "fatura" değil "masa hesabı", müşteriden ad veya telefon istenmiyor, `core/` hiçbir ürünü import etmiyor.
 

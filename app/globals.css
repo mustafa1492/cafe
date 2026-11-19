@@ -5,3 +5,14 @@ body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, san
 main { max-width: 720px; margin: 0 auto; padding: 16px; }
 .home-links { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .home-links a { display: flex; align-items: center; min-height: 56px; padding: 0 16px; border-radius: 14px; border: 2px solid #D5E0D1; background: #fff; color: inherit; font-weight: 700; text-decoration: none; }
+
+/* KARAR BEKLİYOR: kafe renk paleti (tasarım). Aşağıdakiler geçici, kontrastı yeterli yeşil tonlardır. */
+:root {
+  --ana: #2E6B2B; --ana-koyu: #1F4D1D; --ana-orta: #8FBF8A; --ana-acik: #E4F1E2; --ana-yazi: #1F4D1D;
+  --zemin: #F6F8F4; --kart: #FFFFFF; --cizgi: #D5E0D1; --yazi: #1B2619; --sessiz: #4A5A47; --soluk: #66735F; --notr: #EEF1EC;
+  --golge: rgba(36, 86, 34, 0.18); --yesil: #2E6B2B;
+  --tehlike: #B3261E; --tehlike-acik: #FBE9E7; --tehlike-cizgi: #E8A9A4; --tehlike-yazi: #8C1D18;
+  --uyari-acik: #FFF3D6; --uyari-cizgi: #E5C36B; --uyari-yazi: #7A4B00;
+  --koyu: #1B2619; --koyu-cizgi: #3A4A37; --koyu-yazi: #F1F5EF;
+}
+body { background: var(--zemin); color: var(--yazi); }

@@ -26,6 +26,7 @@ Sohbette, Konularda ya da yüz yüze alınan her karar ve her istek buraya **tar
 - 19 Kas [Mustafa, claude.ai]: ~~Müşteri QR'ı okutunca masasını kendisi seçer.~~ ~~Muhammed'e sorulacak.~~ **Her masaya 1 QR** (masaya özel). Siparişi müşteri kendisi onaylar: gönderirken ekranda masası ve sepeti görünür, "Siparişi gönder" der, sipariş doğrudan mutfağa düşer. Kasa ya da garson onayı yoktur. QR adresinde masa numarası yerine tahmin edilemez kod olur (teknik tercih), ekranda yine "Masa 5" yazar.
 
 ## İstekler (henüz yapılmamış)
+- 19 Kas [ekran testi]: Renk paleti geçici. `app/globals.css` içindeki `:root` renkleri ve `app/icon.svg` kodcu tarafından geçici olarak seçildi (core/ui renk değişkenleri tanımsız olduğu için düğmeler okunmuyordu). Gerçek palet tasarım onayında (24 Kas) belirlenir.
 - 19 Kas [Mustafa]: Kafe sahibine sorulacaklar Muhammed'e sorulur (ilk Konu).
 
 ## Bekleyen kararlar

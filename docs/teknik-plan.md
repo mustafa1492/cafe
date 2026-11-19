@@ -109,7 +109,7 @@ Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 - `npm run build` + `typecheck`. Bunları her turda `kafe-deneyici` çalıştırır.
 - `scripts/kafe-sim.cjs`: 10 masa, 50 sipariş. Hesaplar elle karşılaştırılır, "sorun: 0" görülmeden ilerlenmez.
 - Veritabanı: göç dosyaları önce `pglite` ile yerelde denenir, sonra Supabase dal (branch) ya da SQL Editor'de.
-- Ekranlar: Playwright ile 390 px telefon ve 1280 px tablet görüntüleri alınır, axe 0 ihlal, kontrast ≥ 4,5, taşma yok. Atölye araçları buraya uyarlanır.
+- Ekranlar: `npm run ekran` (`scripts/ekran-test.cjs`, 19 Kas). Playwright ile 390 px telefon ve 1280 px tablet ekran görüntüleri alınır, axe 0 ihlal, taşma yok, konsol hatası yok, küçük düğme ve küçük yazı uyarısı verilir. Bilgisayarda ilk kullanımdan önce `npx playwright install chromium` gerekebilir.
 - Pilot öncesi: `engineering:deploy-checklist` ile yayın listesi.
 
 ## 4. Skiller, ajanlar ve araçlar: nerede ne kullanılır
