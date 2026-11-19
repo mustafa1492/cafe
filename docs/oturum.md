@@ -28,12 +28,12 @@
 
 ## Günlük (en fazla 10 satır, satır başına tek cümle; başına hesabı yaz)
 - 19 Kas [Mustafa]: repo ve kurallar kuruldu; Genelprojeler `modul/kafe` dalındaki hazır dosyalar, rapor, bütçe ve Muhammed'in devir dosyası taşındı.
-- 19 Kas [Mustafa]: ajan ağı kuruldu (kodcu, deneyici, inceleme, veritabanı, sekreter; `/is`), ajanlar sadece bu repoda çalışır.
 - 19 Kas [Mustafa]: `/is` ile Next.js iskeleti kuruldu (2 tur: tur 1 DÜZELT, tur 2 GEÇTİ).
 - 19 Kas [Mustafa]: Muhammed'in başlangıç yolunda 5 hata düzeltildi (`cd cafe`, `npm install`, Konu adı, ogren sütunu, sıra istisnası).
 - 19 Kas [Mustafa]: teknik plan yazıldı, `ui-ux-pro-max` skill'i eklendi, Muhammed'in planı özetlendi.
 - 19 Kas [Mustafa]: `/is` ile masa QR kartları sayfası (/kafe/yonetim/qr): kodcu + deneyici (haiku) 2 tur, QR OpenCV ile okundu.
 - 19 Kas [Mustafa]: `/is` ile gerçek tarayıcı testi (`npm run ekran`): ilk çalıştırma core/ui renk değişkenlerinin tanımsız olduğunu yakaladı (düğmeler okunmuyordu), 2. turda GEÇTİ.
 - 19 Kas [Mustafa]: ajanlar: tasarımcı eklendi, deneyici ve sekreter haiku, sabah raporu (Mustafa: 07.42 zamanlanmış görev; Muhammed: günün ilk oturumunda kanca).
+- 19 Kas [Mustafa]: sekreter detaylandırıldı: takvim (`takvim.md`), karar takibi (`karar-takip.md`), tutanak (`/tutanak`), haftalık rapor (`/haftalik` + pazar 19.40 zamanlanmış görev); ilk deneme raporu doğru, takvimi okumayı unuttu, ders verildi.
 - 19 Kas [Mustafa]: karar: hesabı kasa böler ve kapatır (kasa = yönetici), sipariş doğrudan mutfağa düşer; ilk onay Muhammed'le konuşulacak.
 - 19 Kas [Mustafa]: kararlar: site özel tasarım bu projede, alan adı 3 Ara, Vercel Pro 8 Ara, her masaya 1 QR, siparişi müşteri onaylar, personel onayı yok.

@@ -11,7 +11,7 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Teknik plan 
 ## 1. Ekip kuralları (katı, esnemez)
 1. **Yönetici Mustafa.** İş sırasını, kapsamı, para ve iş kurallarını Mustafa belirler. Diğer üyeler Mustafa'nın verdiği işi yürütür.
 2. **Hesap adı promptta yazar** ("Hesap: Muhammed" ya da `/devral Muhammed`). Claude hangi hesapta olduğunu bilemez. Hesap adı yoksa oturum açılınca gösterilen git kullanıcısından tahmin eder ve bir kez sorarak doğrular.
-3. **Aynı anda tek kişi kod yazar.** Sıranın kimde olduğu `docs/nobet.md` dosyasında yazar. Sıra başkasındaysa kod ve belge değiştirilmez. Okumak, soru cevaplamak ve Konulara yazmak serbesttir. **İstisna:** dışarıdan gelen dosyalar (tasarım, menü listesi, fotoğraf) sıra beklenmeden `gelen/<tarih>-<konu>/` klasörüne **yeni dosya olarak** eklenebilir. Var olan dosyaya dokunulmaz, sadece bu klasör commit + push edilir, ardından ilgili Konuya "eklendi" yazılır. Dosyaları sıradaki kişi yerine taşır. Sıra beklemeden gönderilebilecek diğer şeyler şunlardır: `/ogren`'in tuttuğu kendi eğitim ilerleme dosyası (`docs/egitim/ilerleme/<ad>.md`) ve Konulara yazılan her şey.
+3. **Aynı anda tek kişi kod yazar.** Sıranın kimde olduğu `docs/nobet.md` dosyasında yazar. Sıra başkasındaysa kod ve belge değiştirilmez. Okumak, soru cevaplamak ve Konulara yazmak serbesttir. **İstisna:** dışarıdan gelen dosyalar (tasarım, menü listesi, fotoğraf) sıra beklenmeden `gelen/<tarih>-<konu>/` klasörüne **yeni dosya olarak** eklenebilir. Var olan dosyaya dokunulmaz, sadece bu klasör commit + push edilir, ardından ilgili Konuya "eklendi" yazılır. Dosyaları sıradaki kişi yerine taşır. Sıra beklemeden gönderilebilecek diğer şeyler şunlardır: `/ogren`'in tuttuğu kendi eğitim ilerleme dosyası (`docs/egitim/ilerleme/<ad>.md`), sekreterin tuttuğu dosyalar (`docs/takvim.md`, `docs/karar-takip.md`, `docs/tutanaklar/`, `docs/haftalik/`) ve Konulara yazılan her şey.
 4. **Devir:** `/devret <kimden> <kime>` ve `/devral <hesap>` komutlarıyla yapılır. Adımlar `.claude/commands/` içindedir, elle devir yapılmaz.
 5. **Her iş parçası commit + push ile biter.** Push edilmeyen iş ekip için yoktur.
 6. **Dallar:** iş `gelistirme` dalında yapılır. `main`'e (canlıya) sadece Mustafa "yükle" deyince, Mustafa'nın oturumunda gönderilir.
@@ -39,9 +39,11 @@ Kapsam ve plan: `docs/rapor.md` (§3 kapsam, §4 mimari, §8 plan). Teknik plan 
 | `kafe-tasarimci` | tasarım: ekran ve site için tasarım tarifi yazar (`docs/tasarim/`), kod sonrası ekran görüntüleriyle denetler; TAMAM/DÜZELT; kod yazmaz | sonnet |
 | `kafe-inceleme` | değişikliği kurallara göre denetler; para, sipariş ve veritabanı işinden sonra zorunlu | sonnet |
 | `kafe-veritabani` | göç, RLS ve RPC yazar; canlıya dokunmaz | sonnet |
-| `kafe-sekreter` | ortak sekreter, uyum sağlayıcı ve ana oturumun asistanı (brifing, `docs/oturum.md` kaydı, kural bekçisi): herkes kendi alanına odaklanır, birbirini bölmez; bekleyen/engelleyen işleri öne alır, iki alan arasında çevirir, uyumsuzluğu yakalar; kod ve belge değiştirmez, karar vermez | haiku |
+| `kafe-sekreter` | ortak sekreter, uyum sağlayıcı ve ana oturumun asistanı (brifing, `docs/oturum.md` kaydı, kural bekçisi; takvim `docs/takvim.md`, karar takibi `docs/karar-takip.md`, tutanaklar, haftalık rapor): herkes kendi alanına odaklanır, birbirini bölmez; bekleyen/engelleyen işleri öne alır, iki alan arasında çevirir, uyumsuzluğu yakalar; kod ve diğer belgeleri değiştirmez, karar vermez | haiku |
 | `/is <iş>` | bir kod işini ajan ağıyla yürütür: brifing → kodcu ↔ deneyici (en fazla 3 tur) → inceleme → kayıt → push | |
 | `/sekreter [istek]` | sekreteri çağırır; boşsa "şimdi ne yapmalıyım" odak raporu | |
+| `/tutanak <kiminle>` | görüşme tutanağı; takvim, karar takibi ve Konulara işleme | |
+| `/haftalik` | pazar günü haftalık rapor (`docs/haftalik/`) | |
 | `/devret`, `/devral` | sıra devri | |
 | `/kaydet` | sohbetteki kararları ve istekleri deftere ya da Konuya yazar | |
 | `/ogret <ajan> <ders>` | ajana kalıcı kural ekler | |

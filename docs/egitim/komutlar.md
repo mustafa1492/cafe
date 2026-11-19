@@ -16,6 +16,8 @@ Sadece `/` yazarsan Claude bütün komutları listeler. Ok tuşlarıyla seçip E
 | `/aktar [anlatım]` | Muhammed: görüşmeden sonra, duyduklarını anlat, Claude Konulara işlesin | `/aktar Sahip 12 masa dedi, fotoğrafları cuma atacak` |
 | `/is <iş>` | Mustafa (ya da sıra sendeyken Mustafa'nın verdiği iş): bir kod işini ajanlara yaptır | `/is müşteri menüsüne kategori sekmeleri` |
 | `/sekreter [istek]` | Oturum başında: şimdi ne yapmalıyım (tek iş), kim kimi bekliyor; ayrıca gündem ve mesaj taslağı | `/sekreter kafe sahibine fotoğraflar için mesaj yaz` |
+| `/tutanak <kiminle>` | Görüşmeden hemen sonra: anlat, Claude tutanağı yazsın ve işlesin | `/tutanak kafe sahibi Sahip 12 masa dedi, garson 2 kişi` |
+| `/haftalik` | Pazar günü: haftanın raporu | `/haftalik` |
 | `/ogren <ad>` | Yeni üyenin eğitimi (her oturumda en fazla 2 ders) | `/ogren Muhammed` |
 | `/tecrube <ne oldu → ne yapıyoruz>` | Sadece Mustafa: tecrübe aktarmak için | `/tecrube Uzun sohbette karar kayboldu → her kararı /kaydet ile yaz` |
 

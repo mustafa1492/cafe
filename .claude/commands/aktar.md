@@ -8,4 +8,5 @@ Girdi: **$ARGUMENTS**. Girdi boşsa "Anlat, ne konuştunuz?" diye sor ve kullan�
 2. Her bilgiyi ilgili açık Konuya eşleştir. Cevaplanan maddeye yorum yaz ve işaretle (`- [x]`). Bir Konunun bütün maddeleri bittiyse Konuyu kapatma; Mustafa'ya "tamamlandı" yorumu yaz, Mustafa kapatır.
 3. Hiçbir Konuya uymayan bilgi için yeni bir Konu aç: istek ise `iş`, sorun ise `hata`, kafe sahibinin bir kararıysa `karar`. Mustafa'ya ata.
 4. Fiyat, para ya da iş kuralı içeren bilgiyi olduğu gibi yaz, yorumlama. Kararı Mustafa verir.
+4b. Bir görüşmeden sonra kullanılıyorsa önce `/tutanak` ile tutanak çıkar. `/aktar` bu tutanağı Konulara işler.
 5. Sonunda tek bir özet ver: kaç Konu güncellendi, kaç yeni Konu açıldı, Mustafa'nın bakması gereken neler var. GitHub bunları Mustafa'ya e-postayla iletir.
