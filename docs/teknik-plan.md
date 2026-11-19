@@ -5,6 +5,7 @@
 > **KARAR BEKLİYOR** diye işaretli maddeler kafe sahibinin cevabını ya da Mustafa'nın kararını bekler.
 
 ## 0. Özet: bu planla değişen 5 şey
+> **19 Kas kararları:** 1 kabul edildi (özel site). 2 ve 3 kabul edilmedi: alan adı 3 Ara'da, Vercel Pro 8 Ara'da alınacak, etkileri §2'de. Masa adresi yerine **müşteri masasını seçecek**. 4 hâlâ açık. 5 plan içinde.
 1. **ÖNERİ, site:** Kafenin tanıtım sitesi atölye şablonuyla değil, bu projenin içinde özel tasarımla yapılır (§5). Böylece tek alan adı, tek yayın ve tek menü olur, fiyat da tek yerde durur. Atölyeden QR, çerez izni, kit ve metinler alınır.
 2. **ÖNERİ, alan adı:** Alan adı 3 Aralık'ta değil **25 Kasım'da** alınmalı. QR kartları 5 Aralık'ta basılacak ve kartın üstünde son adres olmalı. Meta alan doğrulaması, Supabase giriş adresleri ve pilot da bu adrese bağlı.
 3. **ÖNERİ, Vercel Pro:** Pilot (2 Aralık) gerçek ticari kullanım olduğu için Vercel Pro'ya **1 Aralık'ta**, Supabase Pro ile aynı gün geçilmeli. Ücretsiz Hobby planı ticari kullanıma kapalı.
@@ -53,11 +54,11 @@
 | 20 Kas | Muhammed collaborator, `scripts/kurulum-konular.sh`, varsayılan dal `main` | Mustafa (bilgisayardan) | Konular açılmadan Muhammed'in işleri görünmez |
 | 20 Kas | `ui-ux-pro-max` skill'ini bu repoya kopyala | Ana oturum | §4 |
 | 21 Kas | Kafe sahibiyle görüşme (`/gorusme`) | Muhammed | Ad, masa sayısı, garson, ödeme, Instagram ve Google erişimi, fotoğraf izni |
-| 25 Kas | **Alan adı** (kafe adına). Önce .com.tr'ye bakılır, alınmışsa .com | Mustafa + kafe kartı | DNS'i Vercel'e yönlendir. Meta doğrulaması için TXT kaydı da buraya eklenecek |
+| 3 Ara | **Alan adı** (kafe adına, karar 19 Kas). Önce .com.tr'ye bakılır, alınmışsa .com | Mustafa + kafe kartı | DNS'i Vercel'e yönlendir. Aynı gün Supabase Auth adresleri alan adına çevrilir, Meta TXT kaydı eklenir. **Etkisi:** pilot (2–4 Ara) Vercel'in geçici adresiyle yapılır, pilot QR'ları geçici kâğıda basılır, kalıcı kartlar 3 Ara'dan sonra basılır |
 | 25 Kas | **Supabase**: kafeye ayrı kuruluş + proje, bölge **eu-central-1 (Frankfurt)** | Mustafa + kafe kartı | Türkiye'ye en yakın bölge. Ücretsiz planda proje 1 hafta boş kalırsa durur, geliştirme sırasında haftada bir istek atılır |
-| 25 Kas | Supabase Auth: **Site URL ve yönlendirme adresleri alan adına** ayarlanır | Ana oturum (Supabase bağlayıcısı) | Atölyede bu adres localhost'ta kalmış ve onay e-postası hata sayfasına gitmişti. Aynı hata tekrarlanmaz |
+| 25 Kas | Supabase Auth: Site URL ve yönlendirme adresleri önce Vercel'in geçici adresine, **3 Ara'da alan adına** ayarlanır | Ana oturum (Supabase bağlayıcısı) | Atölyede bu adres localhost'ta kalmış ve onay e-postası hata sayfasına gitmişti. 3 Ara'daki değişiklik yayın listesine yazılır |
 | 25 Kas | **Vercel**: takım + proje, GitHub `mustafa1492/cafe` bağlı. Canlı dal `main`, `gelistirme` önizleme | Mustafa | Ortam değişkenleri (aşağıda). Önizleme adresi pilot öncesi denemelerde kullanılır |
-| 1 Ara | Supabase Pro + **Vercel Pro** (ÖNERİ: 8 Aralık yerine 1 Aralık) | Mustafa + kafe kartı | Pilot ticari kullanım. Supabase Pro günlük yedek (7 gün) verir |
+| 1 Ara | Supabase Pro | Mustafa + kafe kartı | Günlük yedek (7 gün). Vercel Pro 8 Ara'da (karar 19 Kas). Pilot ücretsiz Hobby planında yapılır, Vercel'in kuralları ticari kullanıma izin vermez, bunu bilerek |
 | 30 Kas | Mutfak tableti (kafede yoksa) + stand | Kafe sahibi | Chrome + PWA olarak kurulur |
 | 1–3 Ara | Meta İşletme hesabı, reklam hesabı, Pixel, alan doğrulama | Mustafa + kafe sahibi (§6) | Reklam hesabının para birimi TL, sonradan değişmez |
 
@@ -75,7 +76,7 @@
 ```
 kafeadi.com.tr/              → tanıtım sitesi (özel tasarım, statik, Pixel izinle)
 kafeadi.com.tr/menu          → sitedeki menü (veritabanından, sipariş verilmez)
-kafeadi.com.tr/m/<kafe>/<masa> → masadaki müşteri menüsü (girişsiz, Pixel yok)
+kafeadi.com.tr/m/<kafe>     → müşteri menüsü: QR okutulur, önce masa seçilir (girişsiz, Pixel yok)
 kafeadi.com.tr/kafe/mutfak | garson | yonetim → personel (girişli)
 ```
 Menü tek yerde (veritabanında) tutulur. Sitedeki menü, müşteri menüsü ve A4 basılı menü aynı fiyatları gösterir. Bu yasal olarak da gerekli, çünkü basılı liste QR'daki fiyatlarla aynı olmalı.
@@ -83,7 +84,7 @@ Menü tek yerde (veritabanında) tutulur. Sitedeki menü, müşteri menüsü ve 
 ### Veri modeli taslağı (`kafe-veritabani` yazar, Mustafa onaylar)
 Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 - `businesses`: ad, slug, saat dilimi, açık/kapalı, siparişi geçici kapatma.
-- `tables`: etiket ("Masa 5", "Bahçe 2"), bölüm, QR kodu. KARAR BEKLİYOR: adreste numara mı gizli kod mu? Öneri: gizli kod, ekranda yine "Masa 5" yazar.
+- `tables`: etiket ("Masa 5", "Bahçe 2"), bölüm. Müşteri QR'ı okutunca masayı listeden seçer (karar 19 Kas). Seçim telefonda hatırlanır, değiştirilebilir. Yanlış masa seçilirse kasa siparişi doğru masaya taşır. KARAR BEKLİYOR (Muhammed'le): tek QR mı, masa başına QR mı? Seçilen masa kasada açık değilse ne olur? Bu ikincisi ilk onay konusuna bağlı.
 - `menu_categories`, `menu_items`: ad (TR/EN), açıklama, fiyat, fotoğraf (Supabase Storage), alerjen ve etiket, `sold_out`, sıra.
 - `members`: kişi ve rol. Kasa = yönetici (karar, 19 Kas). Mutfak rolü var. Garson rolü KARAR BEKLİYOR (kafede garson var mı?).
 - `table_sessions`: masanın açık hesabı. Açılır, siparişler ona yazılır, kapanınca masa boşalır.
@@ -205,12 +206,12 @@ Her tabloda `business_id` ve RLS var, para `numeric(12,2)`.
 ## 8. Teknik riskler ve önlemleri
 | Risk | Önlem |
 | --- | --- |
-| Alan adı geç alınırsa QR kartlar yanlış adresle basılır | Alan adı 25 Kas'ta alınır, kartlar ancak alan adı yayındayken basılır |
+| Alan adı 3 Ara'da alınıyor, kartlar 5 Ara'da basılacak | Kartlar ancak alan adı yayında ve telefonla okutulup denendiyse basılır; pilot geçici kâğıtla yapılır |
 | Mutfak tableti sesi çalmaz ya da ekran kararır | "Sesi aç" düğmesi, Wake Lock, pilotta gerçek tablette denenir |
 | Wi-Fi kopar | Personel ekranında "bağlantı koptu" uyarısı ve yoklama; garson elle sipariş girer (`core/offline`) |
 | Aynı masada aynı anda birden çok ödeme | Her ödeme ayrı kayıt, `odeme_al` kilitli; simülasyonda 3 kişinin aynı anda ödemesi denenir |
 | Kasa yavaşlar | Tek ekran: masa → tutar → nakit/kart; tutarlar hazır, klavye yok; pilotta bir ödemenin 2–3 saniyeyi geçmediği ölçülür |
-| Fiyat hilesi / sahte sipariş | Fiyat sadece veritabanından alınır, cihaz onayı ve hız sınırı uygulanır, masa kodu gizli tutulur (öneri) |
+| Fiyat hilesi / sahte sipariş | Fiyat sadece veritabanından alınır, hız sınırı vardır. Müşteri masayı kendisi seçtiği için evden ya da yanlış masaya sipariş riski artar. İlk sipariş onayı ve "masa kasada açık mı" kontrolü bu riski azaltır (Muhammed'le konuşulacak) |
 | Supabase giriş adresi yanlış kalır | 25 Kas'ta ayarlanır, pilot listesinde tekrar kontrol edilir |
 | Ücretsiz plan durur ya da ticari kullanıma kapalıdır | 1 Ara'da iki Pro plana geçilir |
 | Site yavaş açılır | Görseller optimize edilir, LCP ölçülür, ağır efekt kullanılmaz |

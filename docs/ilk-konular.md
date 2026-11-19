@@ -27,7 +27,7 @@ Repo açılınca `scripts/kurulum-konular.sh` bu dosyadaki her bölümü bir Git
 ## Muhammed: devir dosyası, tasarım, Firebase | atanan: - | etiket: soru
 - [x] Devir dosyası geldi → `docs/arkadas-oturumu.md` (19 Kas)
 - [ ] Planında Firebase vardı; Supabase'e geçmemize itirazın var mı?
-- [ ] Senin sohbetindeki açık soru: QR adresinde tahmin edilemez masa kodu olsun mu? (Ödemeyi kimin onaylayacağı karara bağlandı: kasa, 19 Kas.)
+- [ ] Mustafa'yla konuşulacak: müşteri QR'ı okutunca masasını kendisi seçecek (karar 19 Kas). Kafede tek QR mı olsun, her masada ayrı QR mı? Yanlış masa seçilirse ne olsun? (Ödemeyi kimin onaylayacağı karara bağlandı: kasa, 19 Kas.)
 - [ ] Mustafa'yla konuşulacak: müşterinin siparişi doğrudan mutfağa düşecek. Evden sahte siparişe karşı her yeni telefonun ilk siparişini kasa ya da garson onaylasın mı, yoksa gizli masa kodu ve hız sınırı yeterli mi?
 
 ## Mustafa: bekleyen kararlar | atanan: mustafa1492 | etiket: karar
@@ -38,9 +38,6 @@ Repo açılınca `scripts/kurulum-konular.sh` bu dosyadaki her bölümü bir Git
   - İlk sipariş onayı kalacak mı? Muhammed'le konuşulacak. Kalırsa telefon başına olmalı, çünkü masa başına olursa masa açıkken QR'ın fotoğrafını çeken biri evden sipariş atabilir.
   - Kafede garson yoksa ilk siparişi kim onaylayacak?
   - Deneme 2 ay ücretsizse ilk 2 ayın masrafını kim ödeyecek? (butce.md kafenin ödeyeceğini varsayıyor)
-- [ ] Teknik plan önerileri (`docs/teknik-plan.md` §0):
-  - Site atölye şablonuyla değil, bu projenin içinde özel tasarımla yapılsın mı?
-  - Alan adı 3 Aralık yerine 25 Kasım'da alınsın mı? (QR kartları son adresle basılacak)
-  - Vercel Pro'ya 8 Aralık yerine 1 Aralık'ta (pilot öncesi) geçilsin mi?
-  - Site atölyeden yayınlanmayacaksa atölyedeki 3 açık kafe takviminden çıkarılsın mı?
+- [x] Teknik plan önerileri (19 Kas): site özel tasarım; alan adı 3 Ara; Vercel Pro 8 Ara; müşteri masasını kendisi seçer.
+- [ ] Site atölyeden yayınlanmayacağına göre atölyedeki 3 açık kafe takviminden çıkarılsın mı?
 - [ ] Muhammed'in planıyla bizim planımızın farkları (ayrıntı: `docs/arkadas-oturumu.md` ve 19 Kas sohbeti): Firebase mi Supabase mi; çok restoranlı abonelik ürünü mü, önce tek kafe mi; müşterinin kendi hesabını bölmesi; logo/renk marka ayarı; garson/kasa ekranı; masa onayı mı gizli QR kodu mu

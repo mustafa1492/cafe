@@ -58,7 +58,7 @@ Ortak parçalar `core/`, kafeye özel olanlar `products/kafe/` altında durur. K
 ## 6. Ürün kuralları
 - **Arayüz:** ekran başına tek ana iş. Düğmeler en az 56 px, yazı en az 16 px. Klavye yerine −/+ ve seçim düğmeleri kullanılır. Renk her zaman yazıyla birlikte verilir. Onay penceresi yerine "Geri al" olur. Arayüz Türkçe, müşteri menüsü TR/EN.
 - **Teknik:** Next.js (App Router) + TypeScript, PWA. Supabase (Postgres + RLS + Realtime), her tabloda `business_id`. Müşteri sadece `siparis_ver` RPC ile yazar ve fiyat veritabanından alınır. Mutfak ekranı canlıdır, bağlantı koparsa 5 saniyede bir yoklama yapılır.
-- **Adresler:** `/m/<kafe>/<masa>`, `/kafe/mutfak`, `/kafe/garson`, `/kafe/yonetim`.
+- **Adresler:** `/m/<kafe>` (müşteri QR'ı okutunca masasını seçer, 19 Kas), `/kafe/mutfak`, `/kafe/garson`, `/kafe/yonetim`. Tanıtım sitesi aynı uygulamada `/` altında, özel tasarım.
 - Kod İngilizce yazılır. Para TL, `numeric(12,2)`. Saat dilimi Europe/Istanbul.
 - **Değişmez kararlar:** müşteriden ad veya telefon istenmez. Otomatik servis, masa ya da kuver ücreti yoktur (yasak). Ekranda "masa hesabı" yazar, sistem resmi e-Adisyon değildir. Hız sınırı vardır. Masanın ilk siparişini onaylama kuralı Muhammed'le konuşulacak (`docs/kararlar.md`, 19 Kas). Hesabı kasa böler ve kapatır, müşteri bölmez. Diğer kararlar `docs/kararlar.md` dosyasında.
 
