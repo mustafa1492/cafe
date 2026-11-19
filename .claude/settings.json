@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [ { "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/oturum-acilis.sh\"" } ] }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Bash(git push origin main*)",
+      "Bash(git push -f*)",
+      "Bash(git push --force*)",
+      "Read(./.env*)"
+    ]
+  }
+}
