@@ -34,7 +34,7 @@ Sadece `/` yazarsan Claude bütün komutları listeler. Ok tuşlarıyla seçip E
 - **Canlıya alma** bir komut değil, sadece Mustafa'nın oturumunda `Hesap: Mustafa. yükle` yazılınca yapılır.
 
 ## Bir günün akışı
-1. Terminal → `cd kafe` → `claude`. Nöbet ve Konular ekrana gelir.
+1. Terminal → `cd cafe` → `claude`. Nöbet ve Konular ekrana gelir.
 2. `/devral <adın> Bugünkü iş: ...`
 3. İşi sade cümlelerle iste. Bir iş bitince yeni işe geçmeden önce `/clear` yaz.
 4. Karar çıkarsa `/kaydet ...`

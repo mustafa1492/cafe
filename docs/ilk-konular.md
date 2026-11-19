@@ -33,4 +33,9 @@ Repo açılınca `scripts/kurulum-konular.sh` bu dosyadaki her bölümü bir Git
 - [ ] Yayın yeri: Vercel Pro (öneri, 20 $/ay) mı Cloudflare (5 $/ay, +1–2 gün iş) mı?
 - [ ] Veritabanı: ayrı Supabase kuruluşu + Pro (öneri, 25 $/ay, kafenin kartı) mı?
 - [ ] Ücretler: kurulum, aylık bakım + sosyal medya
+- [ ] 19 Kas kontrolünde bulunan 4 uyumsuzluk:
+  - Garson onayı masa başına mı olacak, her yeni telefonun ilk siparişine mi? (Öneri: telefon başına. Masa başına olursa masa açıkken QR'ın fotoğrafını çeken biri evden sipariş atabilir.)
+  - Hesabı kim bölecek, müşteri telefondan mı, garson/kasa mı? Muhammed'in tasarımında müşteri bölüyor, bizim raporda kasa.
+  - Kafede garson yoksa ilk siparişi kim onaylayacak?
+  - Deneme 2 ay ücretsizse ilk 2 ayın masrafını kim ödeyecek? (butce.md kafenin ödeyeceğini varsayıyor)
 - [ ] Muhammed'in planıyla bizim planımızın farkları (ayrıntı: `docs/arkadas-oturumu.md` ve 19 Kas sohbeti): Firebase mi Supabase mi; çok restoranlı abonelik ürünü mü, önce tek kafe mi; müşterinin kendi hesabını bölmesi; logo/renk marka ayarı; garson/kasa ekranı; masa onayı mı gizli QR kodu mu

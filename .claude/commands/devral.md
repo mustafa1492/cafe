@@ -4,7 +4,7 @@ argument-hint: <hesap> [bugünkü iş]
 ---
 Girdi: **$ARGUMENTS**. Hesap adı yoksa dur ve sor.
 
-1. `git checkout gelistirme && git pull`.
+1. `git checkout gelistirme && git pull`. `package-lock.json` değiştiyse ya da `node_modules` klasörü yoksa `npm install` çalıştır.
 2. `docs/nobet.md`:
    - Sıra bu hesaptaysa devam et.
    - Sıra başkasındaysa ve son commit "Devir: … → <bu hesap>" değilse dur. Bunu sadece Mustafa "zorla" diyerek geçebilir.

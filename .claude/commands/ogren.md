@@ -12,4 +12,4 @@ argument-hint: <adın>
 6. İlerleme dosyasına şunları yaz: tarih, biten ders, öğrencinin zorlandığı yer (1 cümle), sıradaki ders. Bu dosyayı commit + push et (sıra kuralının dışında tutulur).
 7. Öğrencinin zorlandığı yer derslerde eksik bir şeyi gösteriyorsa Mustafa'ya atanmış bir `eğitim` Konusu aç: "Derse ekle: ...".
 8. Bitirince: "Bugünlük bu kadar. Sonraki ders: <no>. Devam etmek için `/ogren <ad>`." Tek oturumda en fazla 2 ders anlat, hak korunur.
-9. 5 ders bitince Mustafa'ya atanmış bir `eğitim` Konusu aç: "<ad> eğitimi bitirdi". Ardından `docs/ekip.md`'deki deneyim sütununu "eğitimi bitirdi" yap.
+9. 5 ders bitince Mustafa'ya atanmış bir `eğitim` Konusu aç: "<ad> eğitimi bitirdi". Mustafa bunu `docs/ekip.md`'ye işler.
